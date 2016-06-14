@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get 'session/new'
 
   resources :users
-  resources :restaurants
+  resources :restaurants do
+    member do
+      post 'like'
+      post 'dislike'
+    end
+  end
 
   post '/restaurants/:id/like' =>  'restaurants#like'
   get    'login'   => 'sessions#new'

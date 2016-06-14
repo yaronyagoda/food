@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -38,7 +38,21 @@ class RestaurantsController < ApplicationController
   end
 
   def like
-    Like.new(@restaurant.id, session[:user_id])
+    respond_to do |format|
+      @like = Like.new(restaurant: @restaurant, user: session[:user_id])
+      @like.save
+      format.html { redirect_to restaurants_url}
+      format.json { head :no_content }
+    end
+  end
+
+  def dislike
+    respond_to do |format|
+      @dislike = Dislike.new(restaurant: @restaurant, user: session[:user_id])
+      @dislike.save
+      format.html { redirect_to restaurants_url}
+      format.json { head :no_content }
+    end
   end
 
   # PATCH/PUT /restaurants/1
