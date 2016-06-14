@@ -17,11 +17,12 @@
       <tr>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.food_type %></td>
-        <td><%= restaurant.speed %></td>
+        <td><%= restaurant.speed %></td>ß
         <td><%= restaurant.likes.length %></td>
         <td><%= restaurant.dislikes.length %></td>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Like', restaurant, 'restaurants/2/like' , method: :post%></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

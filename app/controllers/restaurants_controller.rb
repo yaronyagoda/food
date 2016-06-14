@@ -37,6 +37,10 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def like
+    Like.new(@restaurant.id, session[:user_id])
+  end
+
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
