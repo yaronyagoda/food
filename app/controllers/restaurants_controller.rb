@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
 
   def like
     respond_to do |format|
-      @like = Like.new(restaurant: @restaurant, user: @current_user)
+      @like = Like.new(restaurant: @restaurant, user: current_user)
       @like.save
       format.html { redirect_to restaurants_url}
       format.json { head :no_content }
@@ -55,7 +55,7 @@ class RestaurantsController < ApplicationController
 
   def dislike
     respond_to do |format|
-      @dislike = Dislike.new(restaurant: @restaurant, user: @current_user)
+      @dislike = Dislike.new(restaurant: @restaurant, user: current_user)
       @dislike.save
       format.html { redirect_to restaurants_url}
       format.json { head :no_content }
