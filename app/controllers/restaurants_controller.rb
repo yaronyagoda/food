@@ -1,10 +1,17 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :like]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
+
+  include SessionsHelper
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    if logged_in?
+      @restaurants = Restaurant.all
+    else
+      redirect_to sessions_new_url
+    end
+
   end
 
   # GET /restaurants/1
@@ -39,7 +46,7 @@ class RestaurantsController < ApplicationController
 
   def like
     respond_to do |format|
-      @like = Like.new(restaurant: @restaurant, user: session[:user_id])
+      @like = Like.new(restaurant: @restaurant, user: @current_user)
       @like.save
       format.html { redirect_to restaurants_url}
       format.json { head :no_content }
@@ -48,7 +55,7 @@ class RestaurantsController < ApplicationController
 
   def dislike
     respond_to do |format|
-      @dislike = Dislike.new(restaurant: @restaurant, user: session[:user_id])
+      @dislike = Dislike.new(restaurant: @restaurant, user: @current_user)
       @dislike.save
       format.html { redirect_to restaurants_url}
       format.json { head :no_content }

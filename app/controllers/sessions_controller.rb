@@ -10,8 +10,12 @@ class SessionsController < ApplicationController
       redirect_to restaurants_path
     else
       # Create an error message.
-      render 'new'
     end
+  end
+
+  def destroy
+    log_out
+    render 'new'
   end
 
 end
