@@ -15,11 +15,8 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>ß
       <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.food_type %></td>
-        <td><%= restaurant.speed %></td>ß
-        <td><%= restaurant.likes.length %></td>
-        <td><%= restaurant.dislikes.length %></td>
+
+        <%= react_component('Restaurant', restaurant: restaurant) %>ß
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Like', [:like, restaurant], method: :post %></td>
