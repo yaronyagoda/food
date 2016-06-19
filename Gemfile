@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'react-rails', '~> 1.0'
+gem 'react-router-rails', '~>0.13.3'
+gem 'redux-rails', '~> 3.3', '>= 3.3.1'
+gem 'react-redux-rails', '~> 3.1', '>= 3.1.0.2'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/restaurants/:id/like' =>  'restaurants#like'
+  get  'start'  => 'restaurants#start'
+
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

@@ -13,7 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+
 //= require react
 //= require react_ujs
+//= require redux-rails
+//= require react-redux-rails
+//= require react_router
+//= require react_router_ujs
+//= require store
 //= require components
+//= require router
+
+
 //= require_tree .

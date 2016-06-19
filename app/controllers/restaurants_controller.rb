@@ -1,17 +1,14 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
+  protect_from_forgery with: :null_session
+
 
   include SessionsHelper
   # GET /restaurants
   # GET /restaurants.json
   def index
-    if logged_in?
       @restaurants = Restaurant.all
-    else
-      redirect_to sessions_new_url
-    end
-
   end
 
   # GET /restaurants/1
@@ -22,6 +19,10 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
+  end
+
+  def start
+
   end
 
   # GET /restaurants/1/edit
@@ -94,6 +95,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :food_type, :speed)
+      params.require(:restaurant).permit(:name, :food_type, :speed, :description, :link, :ten_bis, :delivery, :rank)
     end
 end

@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Listing Restaurants</h1>
 
 <table>
@@ -16,7 +17,7 @@
     <% @restaurants.each do |restaurant| %>ß
       <tr>
 
-        <%= react_component('Restaurant', restaurant: restaurant) %>ß
+        <%= react_component('Restaurant') %>ß
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Like', [:like, restaurant], method: :post %></td>
