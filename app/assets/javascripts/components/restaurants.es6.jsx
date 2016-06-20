@@ -14,20 +14,29 @@ class Restaurants extends React.Component {
        Api.getRestaurants(); 
     }
 
-    isRank(restaurant) {
-        if (this.refs.rank.value == 'all') return true;
-        return this.refs.rank.value === restaurant.rank;
-    }
+
 
     isCuisine(restaurant) {
-        if (this.refs.cuisine.value == 'all') return true;
-        return this.refs.cuisine.value === restaurant.food_type;
+        const cusineState = this.state.cuisineFilter
+        if (cusineState === 'all') return true;
+        return cusineState === restaurant.food_type;
     }
 
-    handleSelect(sel) {
-        //  this.render()
+    isRank(restaurant) {
+        const rankState = this.state.rankFilter
+        if (rankState === 'all') return true;
+        return rankState === restaurant.rank.toString();
+    }
+
+    handleCuisineChange(evt) {
         this.setState({
-            cuisineFilter: sel.value
+            cuisineFilter: evt.target.value
+        })
+    }
+
+    handleRankChange(evt) {
+        this.setState({
+            rankFilter: evt.target.value
         })
     }
 
@@ -40,7 +49,7 @@ class Restaurants extends React.Component {
 
                 <div className="">
                     <label>Cuisine </label>
-                    <select ref="cuisine" default="asian" defaultValue={this.state.cuisineFilter} >
+                    <select ref="cuisine" defaultValue={this.state.cuisineFilter} onChange={this.handleCuisineChange.bind(this)}>
                         <option value="all"> All </option>
                         <option value="asian" > Asian </option>
                         <option value="dinner"> Dinner </option>
@@ -50,7 +59,7 @@ class Restaurants extends React.Component {
 
                 <div className="">
                     <label>Rank </label>
-                    <select ref="rank" defaultValue="3">
+                    <select ref="rank" defaultValue={this.state.rankFilter} onChange={this.handleRankChange.bind(this)} >
                         <option value="all"> All </option>
                         <option value="1"> 1 </option>
                         <option value="2"> 2 </option>
@@ -75,8 +84,8 @@ class Restaurants extends React.Component {
                     </thead>
 
                     <tbody>
-                    {this.props.restaurants.filter(a => this.isCuisine(a) && this.isCuisine(a)).map(r =>
-                         <Restaurant restaurant={r} />
+                    {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
+                         <Restaurant restaurant={r} key = {r.name}/>
                     )}
                     </tbody>
             </table>

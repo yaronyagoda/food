@@ -19,7 +19,7 @@ class NewRestaurant extends React.Component {
                     <label for="nameField" className="labelRest">
                         <span>
                             Name
-                            <input ref='name' name="nameField" className="input-field"/>
+                            <input ref='name' name="nameField" className="input-field" required/>
                         </span>
                     </label>
 
@@ -59,7 +59,7 @@ class NewRestaurant extends React.Component {
                     <label>Description </label>
                     <textarea ref='description' className="input-field"/>
                 </div>
-                <button onClick={this.handleClick.bind(this)}> Submit</button>
+                <input type="submit" onClick={this.handleClick.bind(this)}> Submit</input>
             </div>
         );
     }
