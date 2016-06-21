@@ -49,7 +49,6 @@ class Restaurants extends React.Component {
             <div>
                 <img src="assets/food4.jpg" className="restaurants-img"/>
                 <h1> Places to eat </h1>
-
                 <div>
                     <div className="filter">
                         <RestaurantFilter label="Cuisine"
@@ -65,31 +64,10 @@ class Restaurants extends React.Component {
                                           options={rankTypes}
                                           className="filter"/>
                     </div>
-
-
                 </div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th className="long">Name</th>
-                        <th>Type</th>
-                        <th>Speed</th>
-                        <th>Ten Bis</th>
-                        <th>Delivery</th>
-                        <th>Rank </th>
-                        <th className="long">Description</th>
-
-
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
-                         <Restaurant restaurant={r} key = {r.id}/>
-                    )}
-                    </tbody>
-            </table>
-
+                {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
+                     <Restaurant restaurant={r} key = {r.id}/>
+                )}
                 <Link to="/new"> Do you have something new?</Link>
 
             </div>

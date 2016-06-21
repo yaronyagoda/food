@@ -1,13 +1,31 @@
-td {
+.restaurant {
   color: black;
   border : 1px solid black;
+  margin-left: 30px;
+  margin-bottom: 3px;
+  width: 50%;
 
   img {
     height : 20px;
     width: 60px;
+    margin: 10px;
+  }
+
+  a {
+    font-size: 20px;
+    margin:10px;
+    color: blue;
+  }
+
+  h5 {
+    margin:10px
   }
 
   .img-hidden {
     visibility: hidden;
+  }
+
+  .desc {
+    display:inline-block;
   }
 }
