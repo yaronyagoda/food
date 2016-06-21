@@ -73,6 +73,13 @@ class NewRestaurant extends React.Component {
                             placeholder="Please enter the restaurant website link"
                             required
                      />
+                     <h3>User Rating </h3>
+                     <Field name="rank"
+                            type="number"
+                            className="new_restaurant-rate"
+                            placeHolder="Please rate from 1 to 5"
+                            required
+                            />
                      <h3> Description </h3>
                      <TextField name="description" placeholder="Enter description"/>
                      <input type="submit" value="Create" id="submit-button"/>
@@ -96,7 +103,7 @@ var Field = React.createClass({
     render: function () {
         return (
             <div>
-                <input type={this.props.type} placeholder={this.props.placeholder} className={this.props.className} onChange={this.changeValue} value={this.getValue()}/>
+                <input type={this.props.type} placeholder={this.props.placeholder} className={this.props.className} onChange={this.changeValue} value={this.getValue()} min="1" max="5"/>
             </div>
         );
     }
