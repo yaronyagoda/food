@@ -1,17 +1,73 @@
+#image-food {
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  position : absolute;
+}
 
-.new_restaurant-field {
-  width: 500px;
 
-  div {
-    .labelRest {
-      width: 100px;
-      margin-right: 50px;
-    }
-  }
+#myForm {
+  border :3px solid black;
+  width:400px;
+  margin-right: 35%;
+  margin-left: 35%;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 10;
+  left:0;
+  top:0;
+  background-color: white;
+}
 
+.container {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  margin-top: 100px;
+}
+
+.new_restaurant-name {
+  width: 200px;
+  margin-left: 30px;
+
+}
+
+.new_restaurant-link {
+  width: 300px;
+  margin-left: 30px;
+
+}
+
+.new_restaurant-select{
+  width: 200px;
+  margin-left: 30px;
+}
+
+.new_restaurant-checkbox{
+  width: 20px;
+  margin-left: 30px;
+}
+
+.new_restaurant-text{
+  width: 300px;
+  height: 100px;
+  margin-left: 30px;
 }
 
 .input-field {
   margin-left: 50px;
-  margin-bottom : 20px;
+}
+
+#error-message {
+  color:red;
+  font-size:20px;
+  margin-left: 50px;
+}
+
+#submit-button {
+  margin-bottom: 30px;
+}
+h3, h1, input {
+  margin-left:30px;
 }

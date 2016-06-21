@@ -27,6 +27,7 @@ gem 'react-rails', '~> 1.0'
 gem 'react-router-rails', '~>0.13.3'
 gem 'redux-rails', '~> 3.3', '>= 3.3.1'
 gem 'react-redux-rails', '~> 3.1', '>= 3.1.0.2'
+gem 'formsy-react-rails'
 
 
 # Use ActiveModel has_secure_password

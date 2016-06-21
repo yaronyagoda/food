@@ -1,6 +1,7 @@
 class Restaurants extends React.Component {
 
 
+
     constructor() {
         super()
         this.state = {
@@ -41,32 +42,31 @@ class Restaurants extends React.Component {
     }
 
     render() {
+        const foodTypes = ["all", "Asian" , "Dinner", "Salad"]
+        const rankTypes = ["1", "2" , "3", "4", "5"]
+
         return (
             <div>
-                <img src="assets/pizza.jpg" className="restaurants-img"/>
+                <img src="assets/food4.jpg" className="restaurants-img"/>
                 <h1> Places to eat </h1>
 
+                <div>
+                    <div className="filter">
+                        <RestaurantFilter label="Cuisine"
+                                          defaultValue={this.state.cuisineFilter}
+                                          onChange={this.handleCuisineChange.bind(this)}
+                                          options={foodTypes}
+                                          />
+                    </div>
+                    <div className="filter">
+                        <RestaurantFilter label="Rank"
+                                          defaultValue={this.state.rankFilter}
+                                          onChange={this.handleRankChange.bind(this)}
+                                          options={rankTypes}
+                                          className="filter"/>
+                    </div>
 
-                <div className="">
-                    <label>Cuisine </label>
-                    <select ref="cuisine" defaultValue={this.state.cuisineFilter} onChange={this.handleCuisineChange.bind(this)}>
-                        <option value="all"> All </option>
-                        <option value="asian" > Asian </option>
-                        <option value="dinner"> Dinner </option>
-                        <option value="salad"> Salad </option>
-                    </select>
-                </div>
 
-                <div className="">
-                    <label>Rank </label>
-                    <select ref="rank" defaultValue={this.state.rankFilter} onChange={this.handleRankChange.bind(this)} >
-                        <option value="all"> All </option>
-                        <option value="1"> 1 </option>
-                        <option value="2"> 2 </option>
-                        <option value="3" > 3 </option>
-                        <option value="4"> 4 </option>
-                        <option value="5"> 5 </option>
-                    </select>
                 </div>
                 <table>
                     <thead>
@@ -85,7 +85,7 @@ class Restaurants extends React.Component {
 
                     <tbody>
                     {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
-                         <Restaurant restaurant={r} key = {r.name}/>
+                         <Restaurant restaurant={r} key = {r.id}/>
                     )}
                     </tbody>
             </table>

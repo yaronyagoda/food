@@ -22,6 +22,7 @@
 //= require react_router
 //= require react_router_ujs
 //= require store
+//= require formsy-react
 //= require components
 //= require router
 
