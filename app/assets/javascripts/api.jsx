@@ -11,12 +11,16 @@ class Api {
   static put(path, data = null) {
     return Api.ajax(path, 'PUT', data);
   }
+
+   static delete(path, data = null) {
+        return Api.ajax(path, 'DELETE', data);
+   }
   static ajax(path, method = 'GET', data = null) {
       return $.ajax({
       url: "http://localhost:3000" + path,
       method: method,
       contentType: 'application/json',
-      data: JSON.stringify(data),
+      data: JSON.stringify(data)
     });
   }
 
@@ -35,6 +39,21 @@ class Api {
             .done(restaurant => dispatch(RestaurantsActions.added(restaurant))
     )
                 
+    }
+
+    static updateRestaurant(id, name, food_type, speed, ten_bis, delivery, rank, link, description, dispatch = store.dispatch) {
+        Api.put("/restaurants/" + id, {restaurant:{id:id, name:name, food_type:food_type, speed:speed, ten_bis:ten_bis,
+            delivery:delivery, rank:rank, link:link, description:description}})
+            .done(restaurant => dispatch(RestaurantsActions.updated(restaurant))
+            )
+
+    }
+
+    static deleteRestaurant(id, dispatch = store.dispatch) {
+        Api.delete("/restaurants/" + id + ".json")
+            .done(restaurant => dispatch(RestaurantsActions.deleted(id))
+            )
+
     }
 
  }

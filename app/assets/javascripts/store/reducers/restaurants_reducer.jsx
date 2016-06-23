@@ -20,28 +20,20 @@ const RestaurantsActions = {
             type : "Added",
             value : value
         }
+    },
+    updated(value) {
+        return {
+            type : "updated",
+            value : value
+        }
+    },
+    deleted(value) {
+        return {
+            type : "deleted",
+            value : value
+        }
     }
 }
-
-// ------------------------------------
-// Action Handlers
-// ------------------------------------
-const ACTION_HANDLERS = {
-    LOADED: (state, action) => {
-        return {
-            loaded: true,
-            array: action.value
-        };
-    },
-    FAILED_TO_LOAD: (state, action) => {
-        return {
-            loaded: true,
-            array: state.array,
-            error: action.value
-        };
-    }
-};
-
 
 
 
@@ -50,11 +42,15 @@ const ACTION_HANDLERS = {
 function restaurantsReducer (state = {restaurants:[]}, action) {
     switch(action.type) {
         case "Loaded":
-           return {restaurants  : action.value}
+           return {restaurants  : action.value};
         case "Failed":
             return state;
         case "Added":
-            return { restaurants:[action.value, ...state.restaurants]}
+            return state;
+        case "updated":
+            return { restaurants:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)]}
+        case "deleted":
+            return { restaurants:state.restaurants.filter(rest => rest.id != action.value)}
         default:
             return state;
     }

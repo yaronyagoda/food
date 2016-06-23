@@ -1,31 +1,70 @@
-.restaurant {
+.restaurant{
   color: black;
   border : 1px solid black;
   margin-left: 30px;
   margin-bottom: 3px;
   width: 50%;
+  display: flex;
 
-  img {
-    height : 20px;
-    width: 60px;
-    margin: 10px;
+  .rating{
+    display: flex;
+
+    img {
+      height : 20px;
+      width: 60px;
+    }
+
+    h3 {
+      margin:10px
+    }
   }
 
-  a {
-    font-size: 20px;
-    margin:10px;
-    color: blue;
-  }
+  .restaurant-details {
+    display: flex;
 
-  h5 {
-    margin:10px
-  }
+    img {
+      height : 20px;
+      width: 60px;
+      margin: 10px;
+    }
 
-  .img-hidden {
-    visibility: hidden;
+    a {
+      font-size: 20px;
+      margin:10px;
+      color: blue;
+    }
+
+    h5 {
+      margin:10px
+    }
+
+    .img-hidden {
+      visibility: hidden;
+    }
   }
 
   .desc {
-    display:inline-block;
+    border: 0.5px solid black;
+    margin: 10px;
+    width: 50%;
+    float: right;
+
+    p {
+      margin: 5px;
+    }
   }
+
+  .restaurant-button {
+    margin: 10px;
+    width: 70px;
+  }
+
 }
+
+#star{
+  width:20px;
+  length:15px
+}
+
+
+
