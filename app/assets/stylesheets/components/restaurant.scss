@@ -3,8 +3,9 @@
   border : 1px solid black;
   margin-left: 30px;
   margin-bottom: 3px;
-  width: 50%;
+  margin-right : 30px;
   display: flex;
+  flex-direction: column;
 
   .rating{
     display: flex;
@@ -21,9 +22,10 @@
 
   .restaurant-details {
     display: flex;
+    flex-direction: column;
 
     img {
-      height : 20px;
+      height : 30px;
       width: 60px;
       margin: 10px;
     }
@@ -35,11 +37,11 @@
     }
 
     h5 {
-      margin:10px
+      margin: 10px;
     }
 
     .img-hidden {
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -47,7 +49,6 @@
     border: 0.5px solid black;
     margin: 10px;
     width: 50%;
-    float: right;
 
     p {
       margin: 5px;
@@ -66,5 +67,14 @@
   length:15px
 }
 
-
+@media (min-width:1200px) {
+  .restaurant {
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+    .restaurant-details {
+      flex-direction: row;
+    }
+  }
+}
 

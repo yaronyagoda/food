@@ -47,12 +47,14 @@ class Restaurants extends React.Component {
 
         return (
             <div>
-                <div className="mainImage">
+                <div className="rest-img-container">
                     <img src="assets/food4.jpg" className="restaurants-img"/>
                  </div>
+                <div className="title-center">
+                    <h1 className="main-title"> Eat What you Love </h1>
+                    <h6 className="main-title main-title-remark"> (or love what you eat)</h6>
+                </div>
 
-                <h1 className="mainTitle"> Eat What you Love </h1>
-                <h6 className="mainTitleRemark"> (or love what you eat)</h6>
                 <div>
                     <div className="filter">
                         <RestaurantFilter label="Cuisine"
