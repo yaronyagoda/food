@@ -9,8 +9,8 @@ var Field = React.createClass({
         return (
             <div>
                 <input type={this.props.type}
-                       placeholder={this.props.placeholder}
                        className={this.props.className}
+                       placeholder={this.props.placeholder}
                        id={this.props.id}
                        onChange={this.changeValue} value={this.getValue()} min="1" max="5"/>
             </div>
@@ -57,7 +57,13 @@ var SelectField = React.createClass({
 
         return (
             <div>
-                <select id="field-select" name={this.props.name} onChange={this.changeValue} value={this.getValue()} defaultValue="">
+                <select id="field-select"
+                        name={this.props.name}
+                        onChange={this.changeValue}
+                        value={this.getValue()}
+                        className={this.props.className}
+                        defaultValue=""
+                        required>
                     { options }
                 </select>
             </div>
@@ -75,7 +81,7 @@ var CheckboxField = React.createClass({
     render: function () {
         return (
             <div id="field-checkbox">
-                <input type="checkbox" id={this.props.name} default={this.props.default} onChange={this.changeValue} checked={this.getValue()}/>
+                <input type="checkbox" id={this.props.name} default={this.props.default} onChange={this.changeValue} className={this.props.className} checked={this.getValue()}/>
                
             </div>
         );
@@ -92,7 +98,7 @@ var TextField = React.createClass({
     render: function () {
         return (
             <div>
-                <textarea type={this.props.type} placeholder={this.props.placeholder} id="field-text" onChange={this.changeValue} value={this.getValue()}/>
+                <textarea type={this.props.type} placeholder={this.props.placeholder} id="field-text" onChange={this.changeValue} value={this.getValue()} className={this.props.className}/>
             </div>
         );
     }

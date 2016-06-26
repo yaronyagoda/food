@@ -29,6 +29,9 @@ gem 'redux-rails', '~> 3.3', '>= 3.3.1'
 gem 'react-redux-rails', '~> 3.1', '>= 3.1.0.2'
 gem 'formsy-react-rails'
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
