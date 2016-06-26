@@ -7,16 +7,22 @@
   display: flex;
   flex-direction: column;
 
+  img {
+    height : 30px;
+    width: 60px;
+    margin: 10px;
+  }
+
+  .img-hidden {
+    visibility: hidden;
+  }
+
   .rating{
     display: flex;
 
     img {
       height : 20px;
-      width: 60px;
-    }
-
-    h3 {
-      margin:10px
+      width: 20px;
     }
   }
 
@@ -24,15 +30,9 @@
     display: flex;
     flex-direction: column;
 
-    img {
-      height : 30px;
-      width: 60px;
-      margin: 10px;
-    }
+
 
     a {
-      font-size: 20px;
-      margin:10px;
       color: blue;
     }
 
@@ -40,15 +40,13 @@
       margin: 10px;
     }
 
-    .img-hidden {
-      display: none;
-    }
+
   }
 
   .desc {
     border: 0.5px solid black;
     margin: 10px;
-    width: 50%;
+    width: 100%;
 
     p {
       margin: 5px;
@@ -62,10 +60,6 @@
 
 }
 
-#star{
-  width:20px;
-  length:15px
-}
 
 @media (min-width:1200px) {
   .restaurant {

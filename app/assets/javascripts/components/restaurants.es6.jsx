@@ -26,7 +26,7 @@ class Restaurants extends React.Component {
     isRank(restaurant) {
         const rankState = this.state.rankFilter
         if (rankState === 'all') return true;
-        return rankState === restaurant.rank.toString();
+        return rankState <= restaurant.rank.toString();
     }
 
     handleCuisineChange(evt) {
@@ -72,9 +72,11 @@ class Restaurants extends React.Component {
                     </div>
                 </div>
 
-                {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
-                     <Restaurant restaurant={r} key = {r.id}/>
-                )}
+                <div className="rest-list">
+                    {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
+                         <Restaurant restaurant={r} key = {r.id}/>
+                    )}
+                </div>
 
                 <Link to="/new" id="newRest"> Have you found a new place to eat?</Link>
 
