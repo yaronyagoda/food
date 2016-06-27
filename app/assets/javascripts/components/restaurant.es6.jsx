@@ -2,13 +2,15 @@
 class Restaurant extends React.Component {
 
     onDelete(){
-        Api.deleteRestaurant(this.props.restaurant.id);
+        //if(confirm("Are you sure????"))
+            Api.deleteRestaurant(this.props.restaurant.id);
     }
 
     render () {
       const tenBisClass = this.props.restaurant.ten_bis ? "" : "img-hidden";
       const deliveryClass = this.props.restaurant.delivery ? "" : "img-hidden";
       const stars = [];
+      const editLink =  '/edit/' + this.props.restaurant.id;
       for (i = 0; i < this.props.restaurant.rank ; i++) {
           stars.push(<img src="assets/star.jpeg" className="star" key={i}/>)
       }
@@ -52,7 +54,7 @@ class Restaurant extends React.Component {
 
 
              <div className="col-sm-2 actions-btn-container">
-                 <button className="btn btn-default restaurant-button">Edit </button>
+                 <Link to={editLink} className="btn btn-default restaurant-button"> Edit</Link>
                  <button className="btn btn-default restaurant-button" onClick={this.onDelete.bind(this)}>Delete </button>
              </div>
          </div>

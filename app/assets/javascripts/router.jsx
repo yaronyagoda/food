@@ -8,5 +8,6 @@ const MyRoutes = (
     <Route name="m" path="/" handler = {Main}>
       <Route  name="start" handler = {App}/>
       <Route  name="new" handler = {NewRestaurant}/>
+      <Route  name="edit/:id" handler = {NewRestaurant}/>
     </Route>
 );

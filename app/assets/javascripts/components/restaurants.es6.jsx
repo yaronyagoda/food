@@ -78,7 +78,7 @@ class Restaurants extends React.Component {
                     )}
                 </div>
 
-                <Link to="/new" id="newRest"> Have you found a new place to eat?</Link>
+                <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
 
             </div>
 

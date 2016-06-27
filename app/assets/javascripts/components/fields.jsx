@@ -5,6 +5,12 @@ var Field = React.createClass({
         this.setValue(event.currentTarget.value);
     },
 
+    componentDidMount : function() {
+        this.setValue(this.props.value)
+    },
+
+
+
     render: function () {
         return (
             <div>
@@ -26,6 +32,10 @@ var SelectField = React.createClass({
     },
     validate() {
         return !this.isRequired() || this.getValue() !== undefined;
+    },
+
+    componentDidMount : function() {
+        this.setValue(this.props.value)
     },
 
     prepareOptions: function (optionsArray) {
@@ -77,6 +87,9 @@ var CheckboxField = React.createClass({
     changeValue: function (event) {
         this.setValue(!this.getValue());
     },
+    componentDidMount : function() {
+        this.setValue(this.props.value)
+    },
 
     render: function () {
         return (
@@ -93,6 +106,10 @@ var TextField = React.createClass({
 
     changeValue: function (event) {
         this.setValue(event.currentTarget.value);
+    },
+    
+    componentDidMount : function() {
+        this.setValue(this.props.value)
     },
 
     render: function () {
