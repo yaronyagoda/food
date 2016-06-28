@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :restaurants
 
   get  'start'  => 'restaurants#start'
+  get  'new'  => 'restaurants#start'
   get  'edit/*id'  => 'restaurants#start'
 
   # The priority is based upon order of creation: first created -> highest priority.

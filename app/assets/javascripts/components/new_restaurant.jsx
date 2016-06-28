@@ -35,6 +35,7 @@ class NewRestaurant extends React.Component {
     onInvalidSubmit(message) {
         console.log("invalid")
         console.log(message)
+        debugger
         this.setState ({
            formError: message
        })
@@ -45,8 +46,6 @@ class NewRestaurant extends React.Component {
     }
 
     render() {
-        const error = this.state.formError &&
-            (<p className="error-message">All fields are mandatory!!! WTF</p>);
 
         let restaurant =  this.state.edit ? this.props.restaurants.find( r => r.id == this.props.params.id): {};
         const buttonText = this.state.edit ? "Update" : "Save";
@@ -59,7 +58,7 @@ class NewRestaurant extends React.Component {
                               onInvalidSubmit={this.onInvalidSubmit.bind(this)}
                               onChange={this.onChange}
                               className="form-horizontal myForm"
-                              ref="form">   
+                              ref="form">
                      <div className="form-group">
                          <h2 className="col-sm-6 control-label">{title}</h2>
                       </div>
@@ -77,7 +76,7 @@ class NewRestaurant extends React.Component {
                          </div>
                      </div>
 
-                     <div className="form-group">
+                         <div className="form-group">
                          <label className="col-sm-3 control-label">Cuisine type</label>
                          <div className="col-sm-4">
                              <SelectField
@@ -133,6 +132,7 @@ class NewRestaurant extends React.Component {
                                     value={restaurant.link}
                                     placeholder="Enter link here..."
                                     className="form-control"
+                                    required
                              />
                          </div>
                      </div>
@@ -163,10 +163,12 @@ class NewRestaurant extends React.Component {
                      <div className="form-group">
                          <label className="col-sm-3 control-label">Address</label>
                          <div className="col-sm-6">
-                             <TextField name="address"
+                             <Field name="address"
                                         placeholder="Street address in TA"
+                                        type="text"
                                         value={restaurant.address}
-                                        className="form-control"v/>
+                                        className="form-control"
+                                        required/>
                          </div>
                      </div>
 
@@ -178,8 +180,6 @@ class NewRestaurant extends React.Component {
                              <Link to="/start" className="btn btn-default"> Cancel</Link>
                          </div>
                      </div>
-
-                     {error}
                   </Formsy.Form>
              </div>
         );

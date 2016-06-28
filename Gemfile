@@ -36,6 +36,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-gmaps'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

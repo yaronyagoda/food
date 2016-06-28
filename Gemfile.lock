@@ -104,6 +104,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.6)
       sprockets-rails
+    rails-assets-classnames (2.2.5)
     rails-assets-gmaps (0.4.24)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -179,6 +180,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.6)
+  rails-assets-classnames!
   rails-assets-gmaps!
   react-rails (~> 1.0)
   react-redux-rails (~> 3.1, >= 3.1.0.2)

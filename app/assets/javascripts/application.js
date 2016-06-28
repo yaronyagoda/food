@@ -31,6 +31,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require gmaps
+//= require classnames
 
 
 

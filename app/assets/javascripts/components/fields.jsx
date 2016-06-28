@@ -12,13 +12,23 @@ var Field = React.createClass({
 
 
     render: function () {
+        const errorMessage = this.getErrorMessage();
+
+        const className = classNames(this.props.className, {
+            'form-error': this.isFormSubmitted() && !this.isValid()
+        });
+
         return (
             <div>
                 <input type={this.props.type}
-                       className={this.props.className}
+                       className={className}
                        placeholder={this.props.placeholder}
                        id={this.props.id}
-                       onChange={this.changeValue} value={this.getValue()} min="1" max="5"/>
+                       onChange={this.changeValue}
+                       aria-describedby="inputError2Status"
+                       value={this.getValue()} min="1" max="5"/>
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">{errorMessage}</span>
             </div>
         );
     }
@@ -67,7 +77,7 @@ var SelectField = React.createClass({
 
         return (
             <div>
-                <select id="field-select"
+                <select
                         name={this.props.name}
                         onChange={this.changeValue}
                         value={this.getValue()}
@@ -107,7 +117,7 @@ var TextField = React.createClass({
     changeValue: function (event) {
         this.setValue(event.currentTarget.value);
     },
-    
+
     componentDidMount : function() {
         this.setValue(this.props.value)
     },
