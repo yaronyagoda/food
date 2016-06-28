@@ -27,8 +27,6 @@ class RestMap extends React.Component {
                             alert(rest.name);
                         }
                     });
-                } else {
-                    alert('Geocode was not successful for the following address: ' + rest.address);
                 }
             });
         });

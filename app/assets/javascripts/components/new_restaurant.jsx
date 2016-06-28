@@ -59,7 +59,7 @@ class NewRestaurant extends React.Component {
                               onInvalidSubmit={this.onInvalidSubmit.bind(this)}
                               onChange={this.onChange}
                               className="form-horizontal myForm"
-                              ref="form">
+                              ref="form">   
                      <div className="form-group">
                          <h2 className="col-sm-6 control-label">{title}</h2>
                       </div>

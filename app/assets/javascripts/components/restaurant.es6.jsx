@@ -6,15 +6,6 @@ class Restaurant extends React.Component {
             Api.deleteRestaurant(this.props.restaurant.id);
     }
 
-    onMouseOver() {
-        window.alert("mouseOver")
-    }
-
-    onMouseOut() {
-        window.alert("mouseOut")
-    }
-
-
     render () {
       const tenBisClass = this.props.restaurant.ten_bis ? "" : "img-hidden";
       const deliveryClass = this.props.restaurant.delivery ? "" : "img-hidden";
@@ -28,7 +19,7 @@ class Restaurant extends React.Component {
              <div className="col-sm-5">
                  <div className="row">
                      <div className="col-sm-8">
-                         <a href={this.props.restaurant.link}>
+                         <a href={this.props.restaurant.link} target="_blank" >
                            <h3>
                                {this.props.restaurant.name}
                            </h3>
@@ -63,8 +54,8 @@ class Restaurant extends React.Component {
 
 
              <div className="col-sm-1">
-                 <Link to={editLink} className="btn btn-default restaurant-button"> Edit</Link>
-                 <button className="btn btn-default restaurant-button" onClick={this.onDelete.bind(this)}>Delete </button>
+                 <Link to={editLink} className="btn btn-default restaurant-button">Edit</Link>
+                 <button className="btn btn-default restaurant-button" onClick={this.onDelete.bind(this)}>Delete</button>
              </div>
          </div>
     );

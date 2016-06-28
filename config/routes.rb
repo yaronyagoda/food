@@ -1,22 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
 
-  get 'session/new'
-
-  resources :users
-  resources :restaurants do
-    member do
-      post 'like'
-      post 'dislike'
-    end
-  end
+  resources :restaurants
 
   get  'start'  => 'restaurants#start'
   get  'edit/*id'  => 'restaurants#start'
-
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

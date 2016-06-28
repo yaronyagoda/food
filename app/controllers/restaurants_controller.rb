@@ -3,8 +3,6 @@ class RestaurantsController < ApplicationController
 
   protect_from_forgery with: :null_session
 
-
-  include SessionsHelper
   # GET /restaurants
   # GET /restaurants.json
   def index
