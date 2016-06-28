@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   get  'start'  => 'restaurants#start'
+  get  'edit/*id'  => 'restaurants#start'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

@@ -1,44 +1,20 @@
 class Restaurants extends React.Component {
 
 
-
-    constructor() {
-        super()
-        this.state = {
-            cuisineFilter: "all",
-                rankFilter: "all"
-        };
-
-    }
-
     componentDidMount() {
        Api.getRestaurants(); 
     }
 
 
 
-    isCuisine(restaurant) {
-        const cusineState = this.state.cuisineFilter
-        if (cusineState === 'all') return true;
-        return cusineState === restaurant.food_type;
-    }
-
-    isRank(restaurant) {
-        const rankState = this.state.rankFilter
-        if (rankState === 'all') return true;
-        return rankState <= restaurant.rank.toString();
-    }
+    
 
     handleCuisineChange(evt) {
-        this.setState({
-            cuisineFilter: evt.target.value
-        })
+        store.dispatch(RestaurantsActions.cuisine_filter(evt.target.value))
     }
 
     handleRankChange(evt) {
-        this.setState({
-            rankFilter: evt.target.value
-        })
+        store.dispatch(RestaurantsActions.rate_filter(evt.target.value))
     }
 
     render() {
@@ -59,36 +35,36 @@ class Restaurants extends React.Component {
                     <div>
                         <div className="filter">
                             <RestaurantFilter label="Cuisine"
-                                              defaultValue={this.state.cuisineFilter}
+                                              defaultValue={this.props.cuisineFilter}
                                               onChange={this.handleCuisineChange.bind(this)}
                                               options={foodTypes}
                             />
                         </div>
                         <div className="filter">
                             <RestaurantFilter label="Rate"
-                                              defaultValue={this.state.rankFilter}
+                                              defaultValue={this.props.rankFilter}
                                               onChange={this.handleRankChange.bind(this)}
                                               options={rankTypes}
                                               className="filter"/>
                         </div>
                     </div>
-                    <div className="left">
-                        <div className="rest-list">
-                            {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
-                                <Restaurant restaurant={r} key = {r.id}/>
-                            )}
+                    <div className="row">
+                        <div className="col-md-5">
+                            <div className="rest-list">
+                                {this.props.filtered.map(r =>
+                                    <Restaurant restaurant={r} key = {r.id}/>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                    <div className="right">
-                        <RestMap></RestMap>
+                        <div className="col-md-4">
+                            <RestMap/>
+                        </div>
                     </div>
 
                     <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
+                    <button className="btn btn-default newRest">Feeling lucky?</button>
                 </div>
-                
 
-                
-                
             </div>
 
         );
@@ -98,7 +74,10 @@ class Restaurants extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        restaurants: state.restaurants
+        restaurants: state.restaurants,
+        filtered: state.filtered,
+        rate_filter: state.rate_filter,
+        cuisine_filter: state.cuisine_filter
     };
 };
 

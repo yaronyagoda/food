@@ -54,7 +54,7 @@ class NewRestaurant extends React.Component {
 
         return (
              <div className="container">
-                 <img src="assets/food2.jpg" id="image-food1"/>
+                 <img src="/assets/food2.jpg" id="image-food1"/>
                  <Formsy.Form onValidSubmit={this.onValidSubmit.bind(this)}
                               onInvalidSubmit={this.onInvalidSubmit.bind(this)}
                               onChange={this.onChange}

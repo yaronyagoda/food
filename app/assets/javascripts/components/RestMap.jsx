@@ -16,10 +16,10 @@ class RestMap extends React.Component {
     render () {
         var geocoder = new google.maps.Geocoder();
         var gmaps = this.gmaps;
-        this.props.restaurants.map(rest => {
+        if (gmaps) gmaps.removeMarkers();
+        this.props.filtered.map(rest => {
             geocoder.geocode({'address': rest.address}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
-                    debugger;
                     gmaps.addMarker({
                         title: rest.name,
                         position: results[0].geometry.location,
@@ -28,7 +28,7 @@ class RestMap extends React.Component {
                         }
                     });
                 } else {
-                    alert('Geocode was not successful for the following reason: ' + rest.address);
+                    alert('Geocode was not successful for the following address: ' + rest.address);
                 }
             });
         });
@@ -43,7 +43,7 @@ class RestMap extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        restaurants: state.restaurants
+        filtered: state.filtered
     };
 };
 

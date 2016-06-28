@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
           stars.push(<img src="assets/star.jpeg" className="star" key={i}/>)
       }
       return (
-         <div className="restaurant row">
+         <div className="restaurant row col-sm-12">
              <div className="col-sm-5">
                  <div className="row">
                      <div className="col-sm-6">
@@ -62,7 +62,7 @@ class Restaurant extends React.Component {
              </div>
 
 
-             <div className="col-sm-2 actions-btn-container">
+             <div className="col-sm-1">
                  <Link to={editLink} className="btn btn-default restaurant-button"> Edit</Link>
                  <button className="btn btn-default restaurant-button" onClick={this.onDelete.bind(this)}>Delete </button>
              </div>
