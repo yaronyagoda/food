@@ -27,14 +27,14 @@ class Restaurant extends React.Component {
          <div className="restaurant row col-sm-12">
              <div className="col-sm-5">
                  <div className="row">
-                     <div className="col-sm-6">
+                     <div className="col-sm-8">
                          <a href={this.props.restaurant.link}>
                            <h3>
                                {this.props.restaurant.name}
                            </h3>
                          </a>
                      </div>
-                     <div className="col-sm-6">
+                     <div className="col-sm-4">
                          <h3>{this.props.restaurant.food_type}</h3>
                      </div>
                  </div>

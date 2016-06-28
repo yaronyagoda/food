@@ -1,5 +1,13 @@
 
 
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
 .rest-img-container {
   height: 300px;
   overflow: hidden;
@@ -51,4 +59,9 @@
 .left{
   float:left;
   width: 50%;
+}
+
+
+.footer {
+   height: 100px;
 }

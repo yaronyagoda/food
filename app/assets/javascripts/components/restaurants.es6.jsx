@@ -1,13 +1,26 @@
 class Restaurants extends React.Component {
 
 
+    constructor() {
+        super();
+        this.state = {
+            luck:""
+        }
+    }
+
+     luckyBastard() {
+         debugger;
+         const rest = this.props.filtered[Math.floor((Math.random() * this.props.filtered.length))];
+         this.setState({
+             luck: "You are going to eat at " + rest.name
+         })
+
+     }
+
+
     componentDidMount() {
        Api.getRestaurants(); 
     }
-
-
-
-    
 
     handleCuisineChange(evt) {
         store.dispatch(RestaurantsActions.cuisine_filter(evt.target.value))
@@ -22,7 +35,7 @@ class Restaurants extends React.Component {
         const rankTypes = ["1", "2" , "3", "4", "5"]
 
         return (
-            <div>
+            <div className="wrapper">
                 <div className="rest-img-container">
                     <img src="assets/food4.jpg" className="restaurants-img"/>
                  </div>
@@ -49,20 +62,37 @@ class Restaurants extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-5">
+                        <div className="col-md-5 col-lg-5">
                             <div className="rest-list">
                                 {this.props.filtered.map(r =>
                                     <Restaurant restaurant={r} key = {r.id}/>
                                 )}
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-lg-5">
                             <RestMap/>
                         </div>
                     </div>
+                    <div className="row">
 
-                    <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
-                    <button className="btn btn-default newRest">Feeling lucky?</button>
+                    </div>
+
+
+                    <div className="footer navbar navbar-default navbar-fixed-bottom">
+
+                        <div className="row">
+                            <div className="col-md-2 col-md-offset-2">
+                                <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
+                            </div>
+                            <div className="col-md-1 col-md-offset-1">
+                                <button className="btn btn-default newRest" onClick={this.luckyBastard.bind(this)}>Feeling lucky?</button>
+                            </div>
+                            <div className="col-md-5 col-md-offset-1">
+                                <h1>{this.state.luck}</h1>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
