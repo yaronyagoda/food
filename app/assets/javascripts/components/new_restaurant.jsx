@@ -14,20 +14,20 @@ class NewRestaurant extends React.Component {
             formError: null,
             edit: this.props.hasOwnProperty("params") && this.props.params.hasOwnProperty("id")
         }
-        debugger;
     }
 
 
     onValidSubmit(model) {
         console.log("valid")
-        if (this.state.edit) {
+
+       if (this.state.edit) {
             Api.updateRestaurant(this.props.params.id, model.name, model.food_type,
                 model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
-                model.rank, model.link, model.description)
+                model.rank, model.link, model.description, model.address)
         } else {
             Api.createRestaurant(model.name, model.food_type,
                 model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
-                model.rank, model.link, model.description)
+                model.rank, model.link, model.description, model.address)
         }
         this.context.router.transitionTo("start")
     }
@@ -156,9 +156,20 @@ class NewRestaurant extends React.Component {
                              <TextField name="description"
                                         placeholder="Enter description"
                                         value={restaurant.description}
-                                        className="form-control"v/> 
+                                        className="form-control"v/>
                          </div>
                      </div>
+
+                     <div className="form-group">
+                         <label className="col-sm-3 control-label">Address</label>
+                         <div className="col-sm-6">
+                             <TextField name="address"
+                                        placeholder="Street address in TA"
+                                        value={restaurant.address}
+                                        className="form-control"v/>
+                         </div>
+                     </div>
+
                      <div className="form-group">
                          <div className="col-sm-2 .col-sm-offset-4">
                              <input type="submit" value={buttonText} className="btn btn-default "/>

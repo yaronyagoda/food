@@ -12,7 +12,7 @@ class RestaurantFilter extends React.Component {
         return (
             <div>
                 <div>
-                    <h4>{this.props.label}</h4>
+                    <h3>{this.props.label}</h3>
                 </div>
                 <div>
                     <select defaultValue={this.props.defaultValue} onChange={this.props.onChange} className="filter-select">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618171948) do
+ActiveRecord::Schema.define(version: 20160628061841) do
 
   create_table "dislikes", force: :cascade do |t|
     t.integer  "user_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160618171948) do
     t.string   "link"
     t.string   "description"
     t.integer  "rank"
+    t.string   "address"
   end
 
   create_table "users", force: :cascade do |t|

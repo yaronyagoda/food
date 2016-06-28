@@ -50,36 +50,45 @@ class Restaurants extends React.Component {
                 <div className="rest-img-container">
                     <img src="assets/food4.jpg" className="restaurants-img"/>
                  </div>
-                <div className="title-center">
-                    <h1 className="main-title"> Eat What you Love </h1>
-                    <h6 className="main-title main-title-remark"> (or love what you eat)</h6>
-                </div>
-
                 <div>
-                    <div className="filter">
-                        <RestaurantFilter label="Cuisine"
-                                          defaultValue={this.state.cuisineFilter}
-                                          onChange={this.handleCuisineChange.bind(this)}
-                                          options={foodTypes}
-                                          />
+                    <div className="title-center">
+                        <h1 className="main-title"> Eat What you Love </h1>
+                        <h6 className="main-title main-title-remark"> (or love what you eat)</h6>
                     </div>
-                    <div className="filter">
-                        <RestaurantFilter label="Rate"
-                                          defaultValue={this.state.rankFilter}
-                                          onChange={this.handleRankChange.bind(this)}
-                                          options={rankTypes}
-                                          className="filter"/>
+
+                    <div>
+                        <div className="filter">
+                            <RestaurantFilter label="Cuisine"
+                                              defaultValue={this.state.cuisineFilter}
+                                              onChange={this.handleCuisineChange.bind(this)}
+                                              options={foodTypes}
+                            />
+                        </div>
+                        <div className="filter">
+                            <RestaurantFilter label="Rate"
+                                              defaultValue={this.state.rankFilter}
+                                              onChange={this.handleRankChange.bind(this)}
+                                              options={rankTypes}
+                                              className="filter"/>
+                        </div>
                     </div>
+                    <div className="left">
+                        <div className="rest-list">
+                            {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
+                                <Restaurant restaurant={r} key = {r.id}/>
+                            )}
+                        </div>
+                    </div>
+                    <div className="right">
+                        <RestMap></RestMap>
+                    </div>
+
+                    <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
                 </div>
+                
 
-                <div className="rest-list">
-                    {this.props.restaurants.filter(a => this.isCuisine(a) && this.isRank(a)).map(r =>
-                         <Restaurant restaurant={r} key = {r.id}/>
-                    )}
-                </div>
-
-                <Link to="/new" className="btn btn-default newRest"> Have you found a new place to eat?</Link>
-
+                
+                
             </div>
 
         );

@@ -6,6 +6,15 @@ class Restaurant extends React.Component {
             Api.deleteRestaurant(this.props.restaurant.id);
     }
 
+    onMouseOver() {
+        window.alert("mouseOver")
+    }
+
+    onMouseOut() {
+        window.alert("mouseOut")
+    }
+
+
     render () {
       const tenBisClass = this.props.restaurant.ten_bis ? "" : "img-hidden";
       const deliveryClass = this.props.restaurant.delivery ? "" : "img-hidden";

@@ -32,6 +32,10 @@ gem 'formsy-react-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-gmaps'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
