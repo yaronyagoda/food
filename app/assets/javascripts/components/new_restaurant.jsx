@@ -10,6 +10,13 @@ class NewRestaurant extends React.Component {
     }
 
     componentWillMount() {
+        Formsy.addValidationRule('isValidAddress', (values, value) => {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({'address': value}, function(results, status) {
+                debugger;
+                return (status === google.maps.GeocoderStatus.OK)
+            });
+        });
         this.state = {
             formError: null,
             edit: this.props.hasOwnProperty("params") && this.props.params.hasOwnProperty("id")
@@ -34,8 +41,6 @@ class NewRestaurant extends React.Component {
 
     onInvalidSubmit(message) {
         console.log("invalid")
-        console.log(message)
-        debugger
         this.setState ({
            formError: message
        })
@@ -62,115 +67,73 @@ class NewRestaurant extends React.Component {
                      <div className="form-group">
                          <h2 className="col-sm-6 control-label">{title}</h2>
                       </div>
+                     <Field name="name"
+                            label="Name"
+                            type="string"
+                            placeholder="Restaurant's name"
+                            className="form-control"
+                            value={restaurant.name}
+                            required/>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Name</label>
-                         <div className="col-sm-6">
-                             <Field name="name"
-                                    type="string"
-                                    placeholder="Restaurant's name"
-                                    className="form-control"
-                                    value={restaurant.name}
-                                    required
-                             />
-                         </div>
-                     </div>
+                     <SelectField
+                         name="food_type"
+                         label = "Cuisine type"
+                         reqiured
+                         placeholder="Select Cuisine Type"
+                         className="form-control"
+                         value={restaurant.food_type}
+                         options = {Constants.cuisineTypes()}>
+                     </SelectField>
 
-                         <div className="form-group">
-                         <label className="col-sm-3 control-label">Cuisine type</label>
-                         <div className="col-sm-4">
-                             <SelectField
-                                 name="food_type"
-                                 reqiured
-                                 placeholder="Select Cuisine Type"
-                                 className="form-control"
-                                 value={restaurant.food_type}
-                                 options = {["Asian", "Dinner", "Salad"]}>
-                             </SelectField>
-                         </div>
-                     </div>
+                     <SelectField
+                         name="speed"
+                         label="Speed"
+                         reqiured
+                         placeholder="Select speed"
+                         value={restaurant.speed}
+                         className="form-control"
+                         options = {["Fast", "Slow"]}>
+                     </SelectField>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Speed</label>
-                         <div className="col-sm-3">
-                             <SelectField
-                                 name="speed"
-                                 reqiured
-                                 placeholder="Select speed"
-                                 value={restaurant.speed}
-                                 className="form-control"
-                                 options = {["Fast", "Slow"]}>
-                             </SelectField>
-                         </div>
-                     </div>
+                     <CheckboxField  name="ten_bis"
+                                     label="Ten Bis"
+                                     value={restaurant.ten_bis}
+                                     className="form-control"/>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Accepts Ten Bis</label>
-                         <div className="col-sm-1">
-                             <CheckboxField  name="ten_bis"
-                                             label="Ten Bis"
-                                             value={restaurant.ten_bis}
-                                             className="form-control"/>
-                         </div>
-                     </div>
+                     <CheckboxField  name="delivery"
+                                     label="Delivery"
+                                     value={restaurant.delivery}
+                                     className="form-control"/>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Delivery</label>
-                         <div className="col-sm-1">
-                             <CheckboxField  name="delivery"
-                                             label="Ten Bis"
-                                             value={restaurant.delivery}
-                                             className="form-control"/>
-                         </div>
-                     </div>
+                     <Field name="link"
+                            type="string"
+                            label="Wbsite link"
+                            value={restaurant.link}
+                            placeholder="Enter link here..."
+                            className="form-control"
+                            required/>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Website link</label>
-                         <div className="col-sm-6">
-                             <Field name="link"
-                                    type="string"
-                                    value={restaurant.link}
-                                    placeholder="Enter link here..."
-                                    className="form-control"
-                                    required
-                             />
-                         </div>
-                     </div>
+                     <Field name="rank"
+                            type="number"
+                            label="Rate"
+                            value={restaurant.rank}
+                            placeholder="Please rate from 1 to 5"
+                            className="form-control"
+                            required/>
+                    
+                     <TextField name="description"
+                                label="Description"
+                                placeholder="Enter description"
+                                value={restaurant.description}
+                                className="form-control"v/>
 
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Rating</label>
-                         <div className="col-sm-5">
-                             <Field name="rank"
-                                    type="number"
-                                    value={restaurant.rank}
-                                    placeholder="Please rate from 1 to 5"
-                                    className="form-control"
-                                    required
-                             />
-                         </div>
-                     </div>
-
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Description</label>
-                         <div className="col-sm-6">
-                             <TextField name="description"
-                                        placeholder="Enter description"
-                                        value={restaurant.description}
-                                        className="form-control"v/>
-                         </div>
-                     </div>
-
-                     <div className="form-group">
-                         <label className="col-sm-3 control-label">Address</label>
-                         <div className="col-sm-6">
-                             <Field name="address"
-                                        placeholder="Street address in TA"
-                                        type="text"
-                                        value={restaurant.address}
-                                        className="form-control"
-                                        required/>
-                         </div>
-                     </div>
+                     <Field name="address"
+                                placeholder="Street address in TA"
+                                label="Address"
+                                type="text"
+                                value={restaurant.address}
+                                className="form-control"
+                                required/>
 
                      <div className="form-group">
                          <div className="col-sm-2 .col-sm-offset-4">
@@ -196,3 +159,5 @@ const mapStateToProps = state => {
 };
 
 NewRestaurant = ReactRedux.connect(mapStateToProps)(NewRestaurant);
+
+

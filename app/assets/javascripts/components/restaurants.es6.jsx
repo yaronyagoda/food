@@ -50,7 +50,7 @@ class Restaurants extends React.Component {
                             <RestaurantFilter label="Cuisine"
                                               defaultValue={this.props.cuisineFilter}
                                               onChange={this.handleCuisineChange.bind(this)}
-                                              options={foodTypes}
+                                              options={["all",...Constants.cuisineTypes()]}
                             />
                         </div>
                         <div className="filter">

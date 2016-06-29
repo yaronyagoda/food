@@ -14,22 +14,24 @@ var Field = React.createClass({
     render: function () {
         const errorMessage = this.getErrorMessage();
 
-        const className = classNames(this.props.className, {
-            'form-error': this.isFormSubmitted() && !this.isValid()
+        const className = classNames("form-group", {
+            'has-error': this.isFormSubmitted() && !this.isValid()
         });
 
         return (
-            <div>
+        <div className={className}>
+            <label className="col-sm-3 control-label">{this.props.label}</label>
+            <div className="col-sm-6">
                 <input type={this.props.type}
-                       className={className}
+                       className={this.props.className}
                        placeholder={this.props.placeholder}
                        id={this.props.id}
                        onChange={this.changeValue}
                        aria-describedby="inputError2Status"
                        value={this.getValue()} min="1" max="5"/>
-                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                <span id="inputError2Status" class="sr-only">{errorMessage}</span>
+                <span>{errorMessage}</span>
             </div>
+        </div>
         );
     }
 });
@@ -76,16 +78,19 @@ var SelectField = React.createClass({
         }
 
         return (
-            <div>
-                <select
-                        name={this.props.name}
-                        onChange={this.changeValue}
-                        value={this.getValue()}
-                        className={this.props.className}
-                        defaultValue=""
-                        required>
-                    { options }
-                </select>
+            <div className="form-group">
+                <label className="col-sm-3 control-label">{this.props.label}</label>
+                <div className="col-sm-4">
+                    <select
+                            name={this.props.name}
+                            onChange={this.changeValue}
+                            value={this.getValue()}
+                            className={this.props.className}
+                            defaultValue=""
+                            required>
+                        { options }
+                    </select>
+                </div>
             </div>
         );
     }
@@ -103,10 +108,17 @@ var CheckboxField = React.createClass({
 
     render: function () {
         return (
-            <div id="field-checkbox">
-                <input type="checkbox" id={this.props.name} default={this.props.default} onChange={this.changeValue} className={this.props.className} checked={this.getValue()}/>
-               
+            <div className="form-group">
+                <label className="col-sm-3 control-label">{this.props.label}</label>
+                <div className="col-sm-1">
+                    <input type="checkbox"
+                           default={this.props.default}
+                           onChange={this.changeValue}
+                           className={this.props.className}
+                           checked={this.getValue()}/>
+                </div>
             </div>
+
         );
     }
 });
@@ -124,8 +136,15 @@ var TextField = React.createClass({
 
     render: function () {
         return (
-            <div>
-                <textarea type={this.props.type} placeholder={this.props.placeholder} id="field-text" onChange={this.changeValue} value={this.getValue()} className={this.props.className}/>
+            <div className="form-group">
+                <label className="col-sm-3 control-label">{this.props.label}</label>
+                <div className="col-sm-6">
+                    <textarea type={this.props.type}
+                              placeholder={this.props.placeholder}
+                              onChange={this.changeValue}
+                              value={this.getValue()}
+                              className={this.props.className}/>
+                </div>
             </div>
         );
     }
