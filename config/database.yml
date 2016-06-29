@@ -21,7 +21,6 @@ test:
 
 production:
   <<: *default
-  encoding: unicode
-  database: myapp_test
-  username: myapp
-  password: password1
+  adapter: postgresql
+  database: food
+  host: localhost
