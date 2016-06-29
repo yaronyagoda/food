@@ -127,7 +127,7 @@ Restaurant.find_or_create_by(name: 'Oban Koban') do |rest|
   rest.link = 'http://obankoban.rest.co.il/'
   rest.description = ""
   rest.rank = 3
-  rest.address = "Haarbaa 4rus tel aviv"
+  rest.address = "Haarbaa 4 tel aviv"
 end
 
 
