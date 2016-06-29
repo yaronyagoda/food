@@ -17,7 +17,7 @@ class Api {
    }
   static ajax(path, method = 'GET', data = null) {
       return $.ajax({
-      url: "http://localhost:3000" + path,
+      url: config.api + path,
       method: method,
       contentType: 'application/json',
       data: JSON.stringify(data)

@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
+
   get  'start'  => 'restaurants#start'
   get  'new'  => 'restaurants#start'
   get  'edit/*id'  => 'restaurants#start'
+
+  root to: redirect('/start')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
