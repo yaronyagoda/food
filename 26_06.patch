@@ -1,0 +1,752 @@
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+index da4861f..db35b26 100644
+--- a/.idea/workspace.xml
++++ b/.idea/workspace.xml
+@@ -1,7 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="5669ef69-e786-45f7-a298-82a84e81bef6" name="Default" comment="" />
++    <list default="true" id="5669ef69-e786-45f7-a298-82a84e81bef6" name="Default" comment="">
++      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/restaurants.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/restaurants.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/session.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/session.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" />
++    </list>
+     <ignored path="food.iws" />
+     <ignored path=".idea/workspace.xml" />
+     <ignored path="$PROJECT_DIR$/.bundle/" />
+@@ -27,21 +41,46 @@
+   </component>
+   <component name="FileEditorManager">
+     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+-      <file leaf-file-name="restaurant.es6.jsx" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/restaurant.es6.jsx">
++      <file leaf-file-name="new_restaurant.jsx" pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx">
+           <provider selected="true" editor-type-id="text-editor">
+             <state relative-caret-position="285">
+-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
++              <caret line="19" column="19" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="restaurant.scss" pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/restaurant.scss">
++      <file leaf-file-name="new_restaurant.scss" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="555">
++              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
++              <folding>
++                <marker date="1466939413000" expanded="true" signature="97:467" ph="{...}" />
++                <marker date="1466939413000" expanded="true" signature="187:463" ph="{...}" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file leaf-file-name="fields.jsx" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="600">
++              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
++              <folding>
++                <marker date="1466942535000" expanded="true" signature="1270:1986" ph="{...}" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="814">
+-              <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
++            <state relative-caret-position="270">
++              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+               <folding />
+             </state>
+           </provider>
+@@ -58,6 +97,7 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="ROOT_SYNC" value="DONT_SYNC" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="IdeDocumentHistory">
+@@ -85,8 +125,6 @@
+         <option value="$PROJECT_DIR$/app/views/restaurants/index.json.jbuilder" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.sass" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/restaurants.scss" />
+-        <option value="$PROJECT_DIR$/Gemfile" />
+-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+         <option value="$PROJECT_DIR$/app/assets/javascripts/components/user_rating.scss" />
+         <option value="$PROJECT_DIR$/app/assets/javascripts/components/user_rating.jsx" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/components/user_rating.scss" />
+@@ -95,14 +133,17 @@
+         <option value="$PROJECT_DIR$/app/assets/javascripts/store/index.jsx" />
+         <option value="$PROJECT_DIR$/app/assets/javascripts/components/RestaurantFilter.jsx" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/components/RestaurantFilter.scss" />
+-        <option value="$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss" />
+-        <option value="$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx" />
+-        <option value="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" />
+-        <option value="$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/components/restaurants.scss" />
+         <option value="$PROJECT_DIR$/app/assets/javascripts/components/restaurants.es6.jsx" />
+         <option value="$PROJECT_DIR$/app/assets/javascripts/components/restaurant.es6.jsx" />
+         <option value="$PROJECT_DIR$/app/assets/stylesheets/components/restaurant.scss" />
++        <option value="$PROJECT_DIR$/Gemfile" />
++        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
++        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
++        <option value="$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss" />
++        <option value="$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss" />
++        <option value="$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx" />
++        <option value="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" />
+       </list>
+     </option>
+   </component>
+@@ -113,9 +154,9 @@
+     <sorting>DEFINITION_ORDER</sorting>
+   </component>
+   <component name="ProjectFrameBounds">
+-    <option name="x" value="938" />
+-    <option name="y" value="30" />
+-    <option name="width" value="2519" />
++    <option name="x" value="360" />
++    <option name="y" value="66" />
++    <option name="width" value="2275" />
+     <option name="height" value="1337" />
+   </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+@@ -431,62 +472,6 @@
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+             <PATH_ELEMENT>
+-              <option name="myItemId" value="store" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="food" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="food" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="app" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="assets" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="javascripts" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="store" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="reducers" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="food" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="food" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="app" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="assets" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="javascripts" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+               <option name="myItemId" value="components" />
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+@@ -735,22 +720,22 @@
+       <workItem from="1465913668643" duration="75816000" />
+       <workItem from="1466492001427" duration="14233000" />
+       <workItem from="1466602325743" duration="536000" />
+-      <workItem from="1466603579357" duration="11875000" />
++      <workItem from="1466603579357" duration="24648000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="108204000" />
++    <option name="totallyTimeSpent" value="120977000" />
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="938" y="30" width="2519" height="1337" extended-state="0" />
+-    <editor active="true" />
++    <frame x="360" y="66" width="2275" height="1337" extended-state="0" />
++    <editor active="false" />
+     <layout>
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26836047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29714286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
++      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25734156" sideWeight="0.50153846" order="10" side_tool="true" content_ui="tabs" />
+       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19165379" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25734156" sideWeight="0.49846154" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+@@ -944,20 +929,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/restaurants.scss">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="45">
+-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="180">
+-          <caret line="12" column="16" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="16" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sessions.scss">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="45">
+@@ -986,21 +957,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="240">
+-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/Gemfile">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="435">
+-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/user_rating.scss" />
+     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/user_rating.jsx" />
+     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/user_rating.scss" />
+@@ -1068,66 +1024,103 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss">
++    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/restaurants.es6.jsx">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="870">
+-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
++        <state relative-caret-position="493">
++          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx">
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/restaurants.scss">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="586">
+-          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
++        <state relative-caret-position="30">
++          <caret line="2" column="19" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="19" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss">
++    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/restaurant.es6.jsx">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="120">
+-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
++        <state relative-caret-position="285">
++          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx">
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/restaurant.scss">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="643">
+-          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
++        <state relative-caret-position="919">
++          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/restaurants.es6.jsx">
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/restaurants.scss">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="493">
+-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
++        <state relative-caret-position="45">
++          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/restaurants.scss">
++    <entry file="file://$PROJECT_DIR$/Gemfile">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="30">
+-          <caret line="2" column="19" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="19" />
++          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/restaurant.es6.jsx">
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="285">
+-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
++        <state relative-caret-position="270">
++          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/restaurant.scss">
++    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="270">
++          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/fields.scss">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="814">
+-          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
++        <state relative-caret-position="0">
++          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/components/new_restaurant.scss">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="555">
++          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
++          <folding>
++            <marker date="1466939413000" expanded="true" signature="97:467" ph="{...}" />
++            <marker date="1466939413000" expanded="true" signature="187:463" ph="{...}" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/fields.jsx">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="600">
++          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
++          <folding>
++            <marker date="1466942535000" expanded="true" signature="1270:1986" ph="{...}" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="285">
++          <caret line="19" column="19" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
+           <folding />
+         </state>
+       </provider>
+diff --git a/Gemfile b/Gemfile
+index b32db77..56d2aaa 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -1,5 +1,8 @@
+ source 'https://rubygems.org'
+ 
++gem 'bootstrap-sass'
++gem 'autoprefixer-rails'
++
+ 
+ # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ gem 'rails', '4.2.6'
+diff --git a/Gemfile.lock b/Gemfile.lock
+index af918af..91a216d 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -37,12 +37,17 @@ GEM
+       thread_safe (~> 0.3, >= 0.3.4)
+       tzinfo (~> 1.1)
+     arel (6.0.3)
++    autoprefixer-rails (6.3.6.2)
++      execjs
+     babel-source (5.8.35)
+     babel-transpiler (0.7.0)
+       babel-source (>= 4.0, < 6)
+       execjs (~> 2.0)
+     binding_of_caller (0.7.2)
+       debug_inspector (>= 0.0.1)
++    bootstrap-sass (3.3.6)
++      autoprefixer-rails (>= 5.2.1)
++      sass (>= 3.3.4)
+     builder (3.2.2)
+     byebug (9.0.5)
+     coffee-rails (4.1.1)
+@@ -164,6 +169,8 @@ PLATFORMS
+   ruby
+ 
+ DEPENDENCIES
++  autoprefixer-rails
++  bootstrap-sass
+   byebug
+   coffee-rails (~> 4.1.0)
+   formsy-react-rails
+diff --git a/app/assets/javascripts/application.js b/app/assets/javascripts/application.js
+index afb4ecf..fc8516b 100644
+--- a/app/assets/javascripts/application.js
++++ b/app/assets/javascripts/application.js
+@@ -25,6 +25,8 @@
+ //= require formsy-react
+ //= require components
+ //= require router
++//= require jquery
++//= require bootstrap-sprockets
+ 
+ 
+ //= require_tree .
+diff --git a/app/assets/javascripts/components/fields.jsx b/app/assets/javascripts/components/fields.jsx
+index dd96695..20cde46 100644
+--- a/app/assets/javascripts/components/fields.jsx
++++ b/app/assets/javascripts/components/fields.jsx
+@@ -57,7 +57,12 @@ var SelectField = React.createClass({
+ 
+         return (
+             <div>
+-                <select id="field-select" name={this.props.name} onChange={this.changeValue} value={this.getValue()} defaultValue="">
++                <select
++                        name={this.props.name} 
++                        onChange={this.changeValue}
++                        value={this.getValue()}
++                        defaulValue=""
++                        className={this.props.className}>
+                     { options }
+                 </select>
+             </div>
+@@ -75,7 +80,7 @@ var CheckboxField = React.createClass({
+     render: function () {
+         return (
+             <div id="field-checkbox">
+-                <input type="checkbox" id={this.props.name} default={this.props.default} onChange={this.changeValue} checked={this.getValue()}/>
++                <input type="checkbox" id={this.props.name} default={this.props.default} onChange={this.changeValue} checked={this.getValue()} className={this.props.className}/>
+                
+             </div>
+         );
+@@ -92,7 +97,7 @@ var TextField = React.createClass({
+     render: function () {
+         return (
+             <div>
+-                <textarea type={this.props.type} placeholder={this.props.placeholder} id="field-text" onChange={this.changeValue} value={this.getValue()}/>
++                <textarea type={this.props.type} placeholder={this.props.placeholder} id="field-text" onChange={this.changeValue} value={this.getValue()} className={this.props.className}/>
+             </div>
+         );
+     }
+diff --git a/app/assets/javascripts/components/new_restaurant.jsx b/app/assets/javascripts/components/new_restaurant.jsx
+index a52d464..2321990 100644
+--- a/app/assets/javascripts/components/new_restaurant.jsx
++++ b/app/assets/javascripts/components/new_restaurant.jsx
+@@ -10,15 +10,17 @@ class NewRestaurant extends React.Component {
+ 
+ 
+     onValidSubmit(model) {
++        debugger;
+         Api.createRestaurant(model.name, model.food_type,
+             model.speed, model.ten_bis, model.delivery,
+             model.rank, model.link, model.description)
+         this.context.router.transitionTo("start")
+     }
+ 
+-    onInvalidSubmit(message) {
++    onInvalidSubmit(data, arg1, arg2) {
++        console.log(data, arg1, arg2);
+         this.state ={
+-           formError: message
++           formError: data
+        }
+     }
+ 
+@@ -38,50 +40,80 @@ class NewRestaurant extends React.Component {
+                  <Formsy.Form onValidSubmit={this.onValidSubmit.bind(this)}
+                               onInvalidSubmit={this.onInvalidSubmit.bind(this)}
+                               onChange={this.onChange}
+-                              id="myForm"
++                              className="form-horizontal myForm"
+                               ref="form">
+-                     <h2> Submit Restaurant </h2>
+-                     <h3> Name </h3>
+-                     <Field name="name"
+-                            type="string"
+-                            placeholder="Restaurant's name"
+-                            id="new_restaurant-name"
+-                            required
+-                     />
+-                     <h3> Cuisine type </h3>
+-                     <SelectField
+-                            name="food_type"
+-                            reqiured
+-                            placeholder="Type"
+-                            options = {["Asian", "Dinner", "Salad"]}>
+-                     </SelectField>
+-                     <h3> Speed </h3>
+-                     <SelectField
+-                         name="speed"
+-                         reqiured
+-                         placeholder="Speed"
+-                         options = {["Fast", "Slow"]}>
+-                     </SelectField>
+-                     <h3> Accepts Ten Bis </h3>
+-                     <CheckboxField  name="ten_bis" label="Ten Bis" default="true"/>
+-                     <h3> Delivery </h3>
+-                     <CheckboxField  name="delivery" label="Delivery" default="false"/>
+-                     <h3> Website link </h3>
+-                     <Field name="link"
+-                            type="string"
+-                            id="new_restaurant-link"
+-                            placeholder="Please enter the restaurant website link"
+-                     />
+-                     <h3>User Rating </h3>
+-                     <Field name="rank"
+-                            type="number"
+-                            id="new_restaurant-rate"
+-                            placeHolder="Please rate from 1 to 5"
+-                            required
+-                            />
+-                     <h3 className="newRest-text"> Description </h3>
+-                     <TextField name="description" placeholder="Enter description"/>
+-                     <input type="submit" value="Create" id="submit-button"/>
++                     <div className="form-group">
++                        <h2 className="control-label col-sm-6"> Submit Restaurant </h2>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Name</label>
++                         <div className="col-sm-4">
++                             <Field
++                                 type="text"
++                                 className="form-control"
++                                 id="nameField"
++                                 placeholder="Please choose"
++                                 name="name" />
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Cuisine type</label>
++                         <div className="col-sm-2">
++                             <SelectField
++                                 name="food_type"
++                                 className="form-control"
++                                 placeholder="Type"
++                                 options = {["Asian", "Dinner", "Salad"]}>
++                             </SelectField>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Speed</label>
++                         <div className="col-sm-2">
++                             <SelectField
++                                 name="speed"
++                                 className="form-control"
++                                 placeholder="Speed"
++                                 options = {["Fast", "Slow"]}>
++                             </SelectField>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Ten Bis</label>
++                         <div className="col-xs-1">
++                             <CheckboxField type="checkbox" className="form-control" name="ten_bis"/>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Delivery</label>
++                         <div className="col-xs-1">
++                             <CheckboxField type="checkbox" className="form-control" name="delivery"/>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Website Link</label>
++                         <div className="col-sm-4">
++                             <Field type="text" className="form-control" name="link"/>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Rate</label>
++                         <div className="col-xs-1">
++                             <Field type="number" className="form-control" name="rate" min="1" max="5"/>
++                         </div>
++                     </div>
++                     <div className="form-group">
++                         <label className="control-label col-sm-2"> Description</label>
++                         <div className="col-sm-4">
++                             <TextField className="form-control" name="desc"/>
++                         </div>
++                     </div>
++
++                     <div class="form-group">
++                         <div className="col-sm-offset-2 col-xs-1">
++                             <button type="submit" className="btn btn-default form-control">Save</button>
++                         </div>
++                     </div>
+                      {error}
+                   </Formsy.Form>
+              </div>
+diff --git a/app/assets/stylesheets/components/fields.scss b/app/assets/stylesheets/components/fields.scss
+index 6007244..e69de29 100644
+--- a/app/assets/stylesheets/components/fields.scss
++++ b/app/assets/stylesheets/components/fields.scss
+@@ -1,15 +0,0 @@
+-#field-select{
+-  width: 200px;
+-  margin-left: 30px;
+-}
+-
+-#field-checkbox{
+-  width: 20px;
+-  margin-left: 30px;
+-}
+-
+-#field-text{
+-  width: 300px;
+-  height: 100px;
+-  margin-left: 30px;
+-}
+\ No newline at end of file
+diff --git a/app/assets/stylesheets/components/new_restaurant.scss b/app/assets/stylesheets/components/new_restaurant.scss
+index e2421d3..4f54c3a 100644
+--- a/app/assets/stylesheets/components/new_restaurant.scss
++++ b/app/assets/stylesheets/components/new_restaurant.scss
+@@ -15,48 +15,22 @@
+   height: 700px;
+   margin-top: 100px;
+ 
+-  #myForm {
++  .myForm {
+     border :3px solid black;
+-    width:400px;
+-    margin-right: 35%;
+-    margin-left: 45%;
+     margin-top: 50px;
+     position: absolute;
++    width:100%;
+     z-index: 10;
+     left:0;
+     top:0;
+     background-color: white;
+-
+-    #new_restaurant-name {
+-      width: 200px;
+-      margin-left: 30px;
+-    }
+-
+-    #new_restaurant-link {
+-      width: 300px;
+-      margin-left: 30px;
+-
+-    }
+-
+-    #new_restaurant-rate{
+-      width: 100px;
+-      margin-left: 30px;
+-    }
+-
+-    h2,h3 {
+-      margin-left:30px;
+-    }
++    padding: 20px;
+ 
+     #error-message {
+       color:red;
+       font-size:20px;
+       margin-left: 50px;
+     }
+-
+-    #submit-button {
+-      margin-bottom: 30px;
+-      margin-left:30px;
+-    }
+   }
+ 
+ 
+diff --git a/app/assets/stylesheets/restaurants.scss b/app/assets/stylesheets/restaurants.scss
+index 38ae1ac..812a149 100644
+--- a/app/assets/stylesheets/restaurants.scss
++++ b/app/assets/stylesheets/restaurants.scss
+@@ -1,4 +1,4 @@
+ // Place all the styles related to the Restaurants controller here.
+-// They will automatically be included in application.css.
++// They will automatically be included in application.css.scss.
+ // You can use Sass (SCSS) here: http://sass-lang.com/
+ //=require_tree ./components
+\ No newline at end of file
+diff --git a/app/assets/stylesheets/session.scss b/app/assets/stylesheets/session.scss
+index a5dc23e..36003a9 100644
+--- a/app/assets/stylesheets/session.scss
++++ b/app/assets/stylesheets/session.scss
+@@ -1,3 +1,3 @@
+ // Place all the styles related to the Session controller here.
+-// They will automatically be included in application.css.
++// They will automatically be included in application.css.scss.
+ // You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/app/assets/stylesheets/sessions.scss b/app/assets/stylesheets/sessions.scss
+index ccb1ed2..9c91d4f 100644
+--- a/app/assets/stylesheets/sessions.scss
++++ b/app/assets/stylesheets/sessions.scss
+@@ -1,3 +1,3 @@
+ // Place all the styles related to the Sessions controller here.
+-// They will automatically be included in application.css.
++// They will automatically be included in application.css.scss.
+ // You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/app/assets/stylesheets/users.scss b/app/assets/stylesheets/users.scss
+index 31a2eac..74acc5f 100644
+--- a/app/assets/stylesheets/users.scss
++++ b/app/assets/stylesheets/users.scss
+@@ -1,3 +1,3 @@
+ // Place all the styles related to the Users controller here.
+-// They will automatically be included in application.css.
++// They will automatically be included in application.css.scss.
+ // You can use Sass (SCSS) here: http://sass-lang.com/
