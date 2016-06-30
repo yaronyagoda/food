@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5669ef69-e786-45f7-a298-82a84e81bef6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/api.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/api.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/RestMap.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/RestMap.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/new_restaurant.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/store/reducers/restaurants_reducer.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/store/reducers/restaurants_reducer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/restaurants_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/restaurants_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/restaurants/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/restaurants/index.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="food.iws" />
@@ -49,8 +42,8 @@
       <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+            <state relative-caret-position="1050">
+              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -827,12 +820,12 @@
       <workItem from="1465913668643" duration="75816000" />
       <workItem from="1466492001427" duration="14233000" />
       <workItem from="1466602325743" duration="26234000" />
-      <workItem from="1467027374227" duration="52064000" />
+      <workItem from="1467027374227" duration="54106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174091000" />
+    <option name="totallyTimeSpent" value="176133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="78" width="1693" height="1337" extended-state="0" />
@@ -1257,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+        <state relative-caret-position="1050">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
           <folding />
         </state>
       </provider>

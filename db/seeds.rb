@@ -3,220 +3,230 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   cities => City.create([{ 'name': 'Chicago' }, { 'name': 'Copenhagen' }])
+#   Mayor.create('name': 'Emanuel', city: cities.first)
 
 
-Restaurant.find_or_create_by(name: 'Herzog') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Herzog'
-  rest.food_type = 'Vegan'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'https://www.facebook.com/Hertzog-%D7%94%D7%A8%D7%A6%D7%95%D7%92-669239419823508/ '
-  rest.description = "Herzog has great food!!! opens at 12:30 and there is an anonying waiter."
-  rest.rank = 5
-  rest.address = "Ibn Gabirol 48 tel aviv"
-  rest.lat = "32.0770713"
-  rest.lang = "34.781474600000024"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Herzog')
+rest1.update_attributes(
+    'speed' => 'Fast',
+    'name' =>'Herzog',
+    'food_type' => 'Vegan',
+    'ten_bis' => true,
+    'delivery' => false,
+    'link' => 'https://www.facebook.com/Hertzog-%D7%94%D7%A8%D7%A6%D7%95%D7%92-669239419823508/ ',
+    'description' =>"Herzog has great food!!! opens at 12:30 and there is an anonying waiter.",
+    'rank' => 5,
+    'address' => "Ibn Gabirol 48 tel aviv",
+    'lat' => "32.0770713",
+    'lang'=> "34.781474600000024")
 
-Restaurant.find_or_create_by(name: 'Giraffe') do |rest|
-  rest.speed = 'Slow'
-  rest.name = 'Giraffe'
-  rest.food_type = 'Asian'
-  rest.ten_bis = true
-  rest.delivery = true
-  rest.link = 'https://www.giraffe.co.il/'
-  rest.description = "Giraffe - nothing more to say"
-  rest.rank = 4
-  rest.address = "Ibn Gabirol 49 tel aviv"
-  rest.lat = "32.0770739"
-  rest.lang = "34.78132240000002"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Giraffe')
+rest1.update_attributes(
+  'speed' => 'Slow',
+  'name' => 'Giraffe',
+  'food_type' => 'Asian',
+  'ten_bis' => true,
+  'delivery' => true,
+  'link' => 'https://www.giraffe.co.il/',
+  'description' => "Giraffe - nothing more to say",
+  'rank' => 4,
+  'address' => "Ibn Gabirol 49 tel aviv",
+  'lat' => "32.0770739",
+  'lang' => "34.78132240000002"
+)
 
-Restaurant.find_or_create_by(name: 'River') do |rest|
-  rest.speed = 'Slow'
-  rest.name = 'River'
-  rest.food_type = 'Asian'
-  rest.ten_bis = true
-  rest.delivery = true
-  rest.link = 'http://river-bar.co.il/'
-  rest.description = ""
-  rest.rank = 2
-  rest.address = "Ibn Gabirol 30 tel aviv"
-  rest.lat = "32.0749746"
-      rest.lang = "34.7817986"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'River')
+rest1.update_attributes(
+  'speed' => 'Slow',
+  'name' => 'River',
+  'food_type' => 'Asian',
+  'ten_bis' => true,
+  'delivery' => true,
+  'link' => 'http://river-bar.co.il/',
+  'description' => "",
+  'rank' => 2,
+  'address' => "Ibn Gabirol 30 tel aviv",
+  'lat' => "32.0749746",
+      'lang' => "34.7817986"
+)
 
-Restaurant.find_or_create_by(name: 'Fresh') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Fresh'
-  rest.food_type = 'Salad'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://www.freshkitchen.co.il/'
-  rest.description = "Looks great, tastes bad."
-  rest.rank = 1
-  rest.address = "Ibn Gabirol 30 tel aviv"
-  rest.lat = "32.0749746"
-      rest.lang = "34.7817986"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Fresh')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Fresh',
+  'food_type' => 'Salad',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://www.freshkitchen.co.il/',
+  'description' => "Looks great, tastes bad.",
+  'rank' => 1,
+  'address' => "Ibn Gabirol 30 tel aviv",
+  'lat' => "32.0749746",
+      'lang' => "34.7817986"
+)
 
-Restaurant.find_or_create_by(name: 'Salsalat') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Salsalat'
-  rest.food_type = 'Salad'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'https://www.youtube.com'
-  rest.description = "Pretty good salads"
-  rest.rank = 3
-  rest.address = "Ibn Gabirol 30 tel aviv"
-  rest.lat = "32.0749746"
-      rest.lang = "34.7817986"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Salsalat')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Salsalat',
+  'food_type' => 'Salad',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'https://www.youtube.com',
+  'description' => "Pretty good salads",
+  'rank' => 3,
+  'address' => "Ibn Gabirol 30 tel aviv",
+  'lat' => "32.0749746",
+      'lang' => "34.7817986"
+)
 
-Restaurant.find_or_create_by(name: 'Goocha Diner') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Goocha Diner'
-  rest.food_type = 'Dinner'
-  rest.ten_bis = true
-  rest.delivery = true
-  rest.link = 'http://www.thediner.co.il/'
-  rest.description = "A great burger"
-  rest.rank = 3
-  rest.address = "Ibn Gabirol 14 tel aviv"
-  rest.lat = "32.0727065"
-      rest.lang = "34.78192469999999"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Goocha Diner')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Goocha Diner',
+  'food_type' => 'Dinner',
+  'ten_bis' => true,
+  'delivery' => true,
+  'link' => 'http://www.thediner.co.il/',
+  'description' => "A great burger",
+  'rank' => 3,
+  'address' => "Ibn Gabirol 14 tel aviv",
+  'lat' => "32.0727065",
+      'lang' => "34.78192469999999"
+)
 
+rest1 = Restaurant.find_or_initialize_by('name': 'Heder Ochel')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Heder Ochel',
+  'food_type' => 'Dinner',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://dininghall.co.il/',
+  'description' => "",
+  'rank' => 3,
+  'address' => "shaul hamelech 23 tel aviv",
+  'lat' => "32.0761591",
+      'lang' => "34.78628309999999"
+)
 
-Restaurant.find_or_create_by(name: 'Heder Ochel') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Heder Ochel'
-  rest.food_type = 'Dinner'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://dininghall.rest.co.il/'
-  rest.description = ""
-  rest.rank = 3
-  rest.address = "shaul hamelech 23 tel aviv"
-  rest.lat = "32.0761591"
-      rest.lang = "34.78628309999999"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Indira')
+rest1.update_attributes(
+  'speed' => 'Slow',
+  'name' => 'Indira',
+  'food_type' => 'Asian',
+  'ten_bis' => true,
+  'delivery' => true,
+  'link' => 'http://www.indira.co.il/',
+  'description' => "",
+  'rank' => 3,
+  'address' => "Shaul hamelech 4 tel aviv",
+  'lat' => "32.0755259",
+      'lang' => "34.78257940000003"
+)
 
+rest1 = Restaurant.find_or_initialize_by('name': 'Rustico')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Rustico',
+  'food_type' => 'Italian',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://rustico.co.il/piazza/menus.html',
+  'description' => "",
+  'rank' => 4,
+  'address' => "sarona tel aviv",
+  'lat' => "32.086443",
+      'lang' => "34.86826169999995"
+)
 
-Restaurant.find_or_create_by(name: 'Indira') do |rest|
-  rest.speed = 'Slow'
-  rest.name = 'Indira'
-  rest.food_type = 'Asian'
-  rest.ten_bis = true
-  rest.delivery = true
-  rest.link = 'http://www.indira.co.il/'
-  rest.description = ""
-  rest.rank = 3
-  rest.address = "Shaul hamelech 4 tel aviv"
-  rest.lat = "32.0755259"
-      rest.lang = "34.78257940000003"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Oban Koban')
+rest1.update_attributes(
+  'speed' => 'Slow',
+  'name' => 'Oban Koban',
+  'food_type' => 'Asian',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://obankoban.co.il/',
+  'description' => "",
+  'rank' => 3,
+  'address' => "Haarbaa 4 tel aviv",
+  'lat' => "32.0703637",
+      'lang' => "34.78301550000003"
+)
 
-Restaurant.find_or_create_by(name: 'Rustico') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Rustico'
-  rest.food_type = 'Italian'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://rustico.co.il/piazza/menus.html'
-  rest.description = ""
-  rest.rank = 4
-  rest.address = "sarona tel aviv"
-  rest.lat = "32.086443"
-      rest.lang = "34.86826169999995"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'HaMiznon')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'HaMiznon',
+  'food_type' => 'Pita',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://www.hamiznon.co.il/',
+  'description' => "Eyal Shani",
+  'rank' => 3,
+  'address' => "Ibn Gabirol 23 tel aviv",
+  'lat' => "32.0736769",
+      'lang' => "34.781730599999946"
+)
 
+rest1 = Restaurant.find_or_initialize_by('name': 'Shishi')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Shishi',
+  'food_type' => 'Sushi',
+  'ten_bis' => false,
+  'delivery' => true,
+  'link' => 'http://shi-shi.co.il/',
+  'description' => "Shoshana palce, no ten bis.",
+  'rank' => 3,
+  'address' => "Ibn Gabirol 33 tel aviv",
+  'lat' => "32.0753649",
+      'lang' => "34.781607099999974"
+)
 
-Restaurant.find_or_create_by(name: 'Oban Koban') do |rest|
-  rest.speed = 'Slow'
-  rest.name = 'Oban Koban'
-  rest.food_type = 'Asian'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://obankoban.rest.co.il/'
-  rest.description = ""
-  rest.rank = 3
-  rest.address = "Haarbaa 4 tel aviv"
-  rest.lat = "32.0703637"
-      rest.lang = "34.78301550000003"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Vitrina')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Vitrina',
+  'food_type' => 'Hamburger',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'https://www.youtube.com',
+  'description' => "Considered to be Tel Avivs best burgers",
+  'rank' => 5,
+  'address' => "Ibn Gabirol 54 tel aviv",
+  'lat' => "32.0781374",
+      'lang' => "34.78136760000007"
+)
 
+rest1 = Restaurant.find_or_initialize_by('name': 'Ad HaEzem Express')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => 'Ad HaEzem Express',
+  'food_type' => 'Hamburger',
+  'ten_bis' => true,
+  'delivery' => false,
+  'link' => 'http://www.adhaetzemex.co.il/',
+  'description' => "Pretty good salads",
+  'rank' => 4,
+  'address' => "Ibn Gabirol 21 tel aviv",
+  'lat' => "32.0733984",
+      'lang' => "34.78173570000001"
+)
 
-Restaurant.find_or_create_by(name: 'HaMiznon') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'HaMiznon'
-  rest.food_type = 'Pita'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://www.hamiznon.co.il/'
-  rest.description = "Eyal Shani"
-  rest.rank = 3
-  rest.address = "Ibn Gabirol 23 tel aviv"
-  rest.lat = "32.0736769"
-      rest.lang = "34.781730599999946"
-end
-
-Restaurant.find_or_create_by(name: 'Shishi') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Shishi'
-  rest.food_type = 'Sushi'
-  rest.ten_bis = false
-  rest.delivery = true
-  rest.link = 'http://shi-shi.co.il/'
-  rest.description = "Shoshana palce, no ten bis."
-  rest.rank = 3
-  rest.address = "Ibn Gabirol 33 tel aviv"
-  rest.lat = "32.0753649"
-      rest.lang = "34.781607099999974"
-end
-
-Restaurant.find_or_create_by(name: 'Vitrina') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Vitrina'
-  rest.food_type = 'Hamburger'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'https://www.youtube.com'
-  rest.description = "Considered to be Tel Avivs best burgers"
-  rest.rank = 5
-  rest.address = "Ibn Gabirol 54 tel aviv"
-  rest.lat = "32.0781374"
-      rest.lang = "34.78136760000007"
-end
-
-Restaurant.find_or_create_by(name: 'Ad HaEzem Express') do |rest|
-  rest.speed = 'Fast'
-  rest.name = 'Ad HaEzem Express'
-  rest.food_type = 'Hamburger'
-  rest.ten_bis = true
-  rest.delivery = false
-  rest.link = 'http://www.adhaetzemex.co.il/'
-  rest.description = "Pretty good salads"
-  rest.rank = 4
-  rest.address = "Ibn Gabirol 21 tel aviv"
-  rest.lat = "32.0733984"
-      rest.lang = "34.78173570000001"
-end
-
-Restaurant.find_or_create_by(name: "Wolfenight's") do |rest|
-  rest.speed = 'Fast'
-  rest.name = "Wolfenight's"
-  rest.food_type = 'Hamburger'
-  rest.ten_bis = true
-  rest.delivery = true
-  rest.link = 'http://www.wolfnights.co.il/m'
-  rest.description = "Great American Burgers"
-  rest.rank = 4
-  rest.address = "Ibn Gabirol 67 tel aviv"
-  rest.lat = "32.0792696"
-      rest.lang = "34.781129899999996"
-end
+rest1 = Restaurant.find_or_initialize_by('name': 'Wolfnights')
+rest1.update_attributes(
+  'speed' => 'Fast',
+  'name' => "Wolfnights",
+  'food_type' => 'Hamburger',
+  'ten_bis' => true,
+  'delivery' => true,
+  'link' => 'http://www.wolfnights.co.il/m',
+  'description' => "Great American Burgers",
+  'rank' => 4,
+  'address' => "Ibn Gabirol 67 tel aviv",
+  'lat' => "32.0792696",
+      'lang' => "34.781129899999996"
+)
