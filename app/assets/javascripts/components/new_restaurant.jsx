@@ -27,17 +27,25 @@ class NewRestaurant extends React.Component {
     onValidSubmit(model) {
         console.log("valid")
 
-       if (this.state.edit) {
-            Api.updateRestaurant(this.props.params.id, model.name, model.food_type,
-                model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
-                model.rank, model.link, model.description, model.address)
-        } else {
-            Api.createRestaurant(model.name, model.food_type,
-                model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
-                model.rank, model.link, model.description, model.address)
-        }
-        this.context.router.transitionTo("start")
-    }
+        new google.maps.Geocoder().geocode({'address': model.address}, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                model.lat = results[0].geometry.location.lat();
+                model.lang = results[0].geometry.location.lng();
+                if (this.state.edit) {
+                    Api.updateRestaurant(this.props.params.id, model.name, model.food_type,
+                        model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
+                        model.rank, model.link, model.description, model.address, model.lat, model.lang)
+                } else {
+                    Api.createRestaurant(model.name, model.food_type,
+                        model.speed, model.ten_bis ? model.ten_bis : false, model.delivery ? model.delivery : false,
+                        model.rank, model.link, model.description, model.address, model.lat, model.lang)
+                }
+                this.context.router.transitionTo("start")
+            }else {
+                window.alert("Invalid address, google does not know" + model.address + " " + status);
+            }
+        }.bind(this));
+    }   
 
     onInvalidSubmit(message) {
         console.log("invalid")

@@ -17,6 +17,8 @@ Restaurant.find_or_create_by(name: 'Herzog') do |rest|
   rest.description = "Herzog has great food!!! opens at 12:30 and there is an anonying waiter."
   rest.rank = 5
   rest.address = "Ibn Gabirol 48 tel aviv"
+  rest.lat = "32.0770713"
+  rest.lang = "34.781474600000024"
 end
 
 Restaurant.find_or_create_by(name: 'Giraffe') do |rest|
@@ -29,6 +31,8 @@ Restaurant.find_or_create_by(name: 'Giraffe') do |rest|
   rest.description = "Giraffe - nothing more to say"
   rest.rank = 4
   rest.address = "Ibn Gabirol 49 tel aviv"
+  rest.lat = "32.0770739"
+  rest.lang = "34.78132240000002"
 end
 
 Restaurant.find_or_create_by(name: 'River') do |rest|
@@ -41,6 +45,8 @@ Restaurant.find_or_create_by(name: 'River') do |rest|
   rest.description = ""
   rest.rank = 2
   rest.address = "Ibn Gabirol 30 tel aviv"
+  rest.lat = "32.0749746"
+      rest.lang = "34.7817986"
 end
 
 Restaurant.find_or_create_by(name: 'Fresh') do |rest|
@@ -53,6 +59,8 @@ Restaurant.find_or_create_by(name: 'Fresh') do |rest|
   rest.description = "Looks great, tastes bad."
   rest.rank = 1
   rest.address = "Ibn Gabirol 30 tel aviv"
+  rest.lat = "32.0749746"
+      rest.lang = "34.7817986"
 end
 
 Restaurant.find_or_create_by(name: 'Salsalat') do |rest|
@@ -65,6 +73,8 @@ Restaurant.find_or_create_by(name: 'Salsalat') do |rest|
   rest.description = "Pretty good salads"
   rest.rank = 3
   rest.address = "Ibn Gabirol 30 tel aviv"
+  rest.lat = "32.0749746"
+      rest.lang = "34.7817986"
 end
 
 Restaurant.find_or_create_by(name: 'Goocha Diner') do |rest|
@@ -77,6 +87,8 @@ Restaurant.find_or_create_by(name: 'Goocha Diner') do |rest|
   rest.description = "A great burger"
   rest.rank = 3
   rest.address = "Ibn Gabirol 14 tel aviv"
+  rest.lat = "32.0727065"
+      rest.lang = "34.78192469999999"
 end
 
 
@@ -90,6 +102,8 @@ Restaurant.find_or_create_by(name: 'Heder Ochel') do |rest|
   rest.description = ""
   rest.rank = 3
   rest.address = "shaul hamelech 23 tel aviv"
+  rest.lat = "32.0761591"
+      rest.lang = "34.78628309999999"
 end
 
 
@@ -103,6 +117,8 @@ Restaurant.find_or_create_by(name: 'Indira') do |rest|
   rest.description = ""
   rest.rank = 3
   rest.address = "Shaul hamelech 4 tel aviv"
+  rest.lat = "32.0755259"
+      rest.lang = "34.78257940000003"
 end
 
 Restaurant.find_or_create_by(name: 'Rustico') do |rest|
@@ -114,7 +130,9 @@ Restaurant.find_or_create_by(name: 'Rustico') do |rest|
   rest.link = 'http://rustico.co.il/piazza/menus.html'
   rest.description = ""
   rest.rank = 4
-  rest.address = "Kaplan 22 tel aviv"
+  rest.address = "sarona tel aviv"
+  rest.lat = "32.086443"
+      rest.lang = "34.86826169999995"
 end
 
 
@@ -128,6 +146,8 @@ Restaurant.find_or_create_by(name: 'Oban Koban') do |rest|
   rest.description = ""
   rest.rank = 3
   rest.address = "Haarbaa 4 tel aviv"
+  rest.lat = "32.0703637"
+      rest.lang = "34.78301550000003"
 end
 
 
@@ -141,6 +161,8 @@ Restaurant.find_or_create_by(name: 'HaMiznon') do |rest|
   rest.description = "Eyal Shani"
   rest.rank = 3
   rest.address = "Ibn Gabirol 23 tel aviv"
+  rest.lat = "32.0736769"
+      rest.lang = "34.781730599999946"
 end
 
 Restaurant.find_or_create_by(name: 'Shishi') do |rest|
@@ -153,6 +175,8 @@ Restaurant.find_or_create_by(name: 'Shishi') do |rest|
   rest.description = "Shoshana palce, no ten bis."
   rest.rank = 3
   rest.address = "Ibn Gabirol 33 tel aviv"
+  rest.lat = "32.0753649"
+      rest.lang = "34.781607099999974"
 end
 
 Restaurant.find_or_create_by(name: 'Vitrina') do |rest|
@@ -165,6 +189,8 @@ Restaurant.find_or_create_by(name: 'Vitrina') do |rest|
   rest.description = "Considered to be Tel Avivs best burgers"
   rest.rank = 5
   rest.address = "Ibn Gabirol 54 tel aviv"
+  rest.lat = "32.0781374"
+      rest.lang = "34.78136760000007"
 end
 
 Restaurant.find_or_create_by(name: 'Ad HaEzem Express') do |rest|
@@ -177,6 +203,8 @@ Restaurant.find_or_create_by(name: 'Ad HaEzem Express') do |rest|
   rest.description = "Pretty good salads"
   rest.rank = 4
   rest.address = "Ibn Gabirol 21 tel aviv"
+  rest.lat = "32.0733984"
+      rest.lang = "34.78173570000001"
 end
 
 Restaurant.find_or_create_by(name: "Wolfenight's") do |rest|
@@ -189,4 +217,6 @@ Restaurant.find_or_create_by(name: "Wolfenight's") do |rest|
   rest.description = "Great American Burgers"
   rest.rank = 4
   rest.address = "Ibn Gabirol 67 tel aviv"
+  rest.lat = "32.0792696"
+      rest.lang = "34.781129899999996"
 end

@@ -62,7 +62,7 @@ function restaurantsReducer (state = {restaurants:[] , filtered:[], cuisineFilte
         case "Added":
             return state;
         case "updated":
-            return { restaurants:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)], filtered:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)], cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}
+            return { restaurants:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)], filtered:stae.filtered, cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}
         case "deleted":
             return { restaurants:state.restaurants.filter(rest => rest.id != action.value),
                 filtered:state.restaurants.filter(rest => rest.id != action.value), cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}

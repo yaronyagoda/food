@@ -14,24 +14,20 @@ class RestMap extends React.Component {
 
 
     render () {
-        var geocoder = new google.maps.Geocoder();
         var gmaps = this.gmaps;
-        if (gmaps) gmaps.removeMarkers();
-        this.props.filtered.map(rest => {
-            geocoder.geocode({'address': rest.address}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    gmaps.addMarker({
-                        title: rest.name,
-                        position: results[0].geometry.location,
-                        click: function(e) {
-                            alert(rest.name);
-                        }
-                    });
+        if (gmaps) {
+            gmaps.removeMarkers();
+            this.props.filtered.map(rest => {
+            gmaps.addMarker({
+                title: rest.name,
+                lat: rest.lat,
+                lng: rest.lang,
+                click: function(e) {
+                    alert(rest.name);
                 }
-            });
-        });
-
-
+            })
+            } )
+        }
         return (
             <div id="map" className="map">
             </div>

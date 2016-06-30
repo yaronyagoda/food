@@ -33,17 +33,17 @@ class Api {
             });
     }
 
-    static createRestaurant(name, food_type, speed, ten_bis, delivery, rank, link, description, address, dispatch = store.dispatch) {
+    static createRestaurant(name, food_type, speed, ten_bis, delivery, rank, link, description, address, lat, lang, dispatch = store.dispatch) {
         Api.post("/restaurants", {restaurant:{name:name, food_type:food_type, speed:speed, ten_bis:ten_bis, 
-        delivery:delivery, rank:rank, link:link, description:description, address:address}})
+        delivery:delivery, rank:rank, link:link, description:description, address:address, lat:lat, lang:lang}})
             .done(restaurant => dispatch(RestaurantsActions.added(restaurant))
     )
                 
     }
 
-    static updateRestaurant(id, name, food_type, speed, ten_bis, delivery, rank, link, description, address, dispatch = store.dispatch) {
+    static updateRestaurant(id, name, food_type, speed, ten_bis, delivery, rank, link, description, address, lat, lang, dispatch = store.dispatch) {
         Api.put("/restaurants/" + id, {restaurant:{id:id, name:name, food_type:food_type, speed:speed, ten_bis:ten_bis,
-            delivery:delivery, rank:rank, link:link, description:description, address:address}})
+            delivery:delivery, rank:rank, link:link, description:description, address:address, lat:lat, lang:lang}})
             .done(restaurant => dispatch(RestaurantsActions.updated(restaurant))
             )
 
