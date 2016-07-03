@@ -9,7 +9,6 @@ class Restaurants extends React.Component {
     }
 
      luckyBastard() {
-         debugger;
          const rest = this.props.filtered[Math.floor((Math.random() * this.props.filtered.length))];
          this.setState({
              luck: "You are going to eat at " + rest.name

@@ -2,7 +2,7 @@
 class Restaurant extends React.Component {
 
     onDelete(){
-        //if(confirm("Are you sure????"))
+        if(confirm("Are you sure????"))
             Api.deleteRestaurant(this.props.restaurant.id);
     }
 

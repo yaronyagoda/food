@@ -13,7 +13,6 @@ class NewRestaurant extends React.Component {
         Formsy.addValidationRule('isValidAddress', (values, value) => {
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({'address': value}, function(results, status) {
-                debugger;
                 return (status === google.maps.GeocoderStatus.OK)
             });
         });
