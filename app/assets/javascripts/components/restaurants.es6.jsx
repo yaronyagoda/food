@@ -41,8 +41,8 @@ class Restaurants extends React.Component {
                  </div>
                 <div>
                     <div className="title-center">
-                        <h1 className="main-title"> Eat What you Love </h1>
-                        <h6 className="main-title main-title-remark"> (or love what you eat)</h6>
+                        <h1 className="main-title"> Wewok </h1>
+                        <h6 className="main-title main-title-remark"> (you know? wok is like work but Asian? hilarious!!!)</h6>
                     </div>
 
                     <div>

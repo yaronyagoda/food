@@ -15,3 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+# idea file
+.idea/*
+#Secret files:
+.env.local
+public/javascripts
+.byebug_history

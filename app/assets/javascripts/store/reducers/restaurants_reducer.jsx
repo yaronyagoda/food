@@ -62,15 +62,16 @@ function restaurantsReducer (state = {restaurants:[] , filtered:[], cuisineFilte
         case "Added":
             return state;
         case "updated":
-            return { restaurants:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)], filtered:stae.filtered, cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}
+            return { restaurants:[action.value, ...state.restaurants.filter(rest => rest.id == action.value.id)].sort,
+                filtered:stae.filtered, cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}
         case "deleted":
             return { restaurants:state.restaurants.filter(rest => rest.id != action.value),
                 filtered:state.restaurants.filter(rest => rest.id != action.value), cuisineFilter:state.cuisineFilter, rateFilter: state.rateFilter}
         case "cuisine_filter":
             debugger;
-            return {restaurants: state.restaurants, filtered:state.restaurants.filter(rest => isCuisine(rest, action.value) && isRate(rest, state.rateFilter)), cuisineFilter:action.value, rateFilter:state.rateFilter}
+            return {restaurants: state.restaurants, filtered:state.restaurants.filter(rest => isCuisine(rest, action.value) && isRate(rest, state.rateFilter)).sort, cuisineFilter:action.value, rateFilter:state.rateFilter}
         case "rate_filter":
-            return {restaurants: state.restaurants, filtered:state.restaurants.filter(rest => isCuisine(rest, state.cuisineFilter) && isRate(rest, action.value)), cuisineFilter:state.cuisineFilter, rateFilter:action.value}
+            return {restaurants: state.restaurants, filtered:state.restaurants.filter(rest => isCuisine(rest, state.cuisineFilter) && isRate(rest, action.value)).sort, cuisineFilter:state.cuisineFilter, rateFilter:action.value}
         default:
             return state;
     }

@@ -12,9 +12,10 @@ class Api {
     return Api.ajax(path, 'PUT', data);
   }
 
-   static delete(path, data = null) {
-        return Api.ajax(path, 'DELETE', data);
-   }
+  static remove(path, data = null) {
+    return Api.ajax(path, 'DELETE', data);
+  }
+
   static ajax(path, method = 'GET', data = null) {
       return $.ajax({
       url: config.api + path,
@@ -24,36 +25,30 @@ class Api {
     });
   }
 
-    static getRestaurants(dispatch = store.dispatch) {
-        Api.get("/restaurants.json")
-            .done(restaurants => dispatch(RestaurantsActions.loaded(restaurants)))
+  static getRestaurants() {
+    Api.get('/restaurants.json')
+            .done(restaurants => store.dispatch(RestaurantsActions.loaded(restaurants)))
             .fail(error => {
-                const message = error.message || error;
-                dispatch(RestaurantsActions.failedToLoad(message));
+              const message = error.message || error;
+              store.dispatch(RestaurantsActions.failedToLoad(message));
             });
-    }
+  }
 
-    static createRestaurant(name, food_type, speed, ten_bis, delivery, rank, link, description, address, lat, lang, dispatch = store.dispatch) {
-        Api.post("/restaurants", {restaurant:{name:name, food_type:food_type, speed:speed, ten_bis:ten_bis, 
-        delivery:delivery, rank:rank, link:link, description:description, address:address, lat:lat, lang:lang}})
-            .done(restaurant => dispatch(RestaurantsActions.added(restaurant))
-    )
-                
-    }
+  static createRestaurant(restaurant) {
+    Api.post('restaurants', { restaurant: restaurant })
+            .done(rest => store.dispatch(RestaurantsActions.added(rest))
+    );
+  }
 
-    static updateRestaurant(id, name, food_type, speed, ten_bis, delivery, rank, link, description, address, lat, lang, dispatch = store.dispatch) {
-        Api.put("/restaurants/" + id, {restaurant:{id:id, name:name, food_type:food_type, speed:speed, ten_bis:ten_bis,
-            delivery:delivery, rank:rank, link:link, description:description, address:address, lat:lat, lang:lang}})
-            .done(restaurant => dispatch(RestaurantsActions.updated(restaurant))
-            )
+  static updateRestaurant(id, restaurant) {
+    Api.put('/restaurants/' + id, { restaurant: restaurant })
+            .done(rest => store.dispatch(RestaurantsActions.updated(restaurant))
+            );
+  }
 
-    }
-
-    static deleteRestaurant(id, dispatch = store.dispatch) {
-        Api.delete("/restaurants/" + id + ".json")
-            .done(restaurant => dispatch(RestaurantsActions.deleted(id))
-            )
-
-    }
-
- }
+  static deleteRestaurant(id) {
+    Api.remove('/restaurants/' + id + '.json')
+            .done(restaurant => store.dispatch(RestaurantsActions.deleted(id))
+            );
+  }
+}
