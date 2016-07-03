@@ -34,6 +34,18 @@ class Api {
             });
   }
 
+  static getCuisineTypes() {
+    Api.get('/cuisine_types.json')
+      .done(types =>  {
+          store.dispatch(RestaurantsActions.cuisine_types_loaded(types))
+      }
+         )
+      .fail(error => {
+        const message = error.message || error;
+        store.dispatch(RestaurantsActions.failedToLoad(message));
+      });
+  }
+
   static createRestaurant(restaurant) {
     Api.post('restaurants', { restaurant: restaurant })
             .done(rest => store.dispatch(RestaurantsActions.added(rest))

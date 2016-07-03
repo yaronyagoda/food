@@ -26,7 +26,7 @@ class Restaurant extends React.Component {
                          </a>
                      </div>
                      <div className="col-sm-5">
-                         <h3>{this.props.restaurant.food_type}</h3>
+                         <h3>{this.props.cuisine_types.filter(t => t.id == this.props.restaurant.cuisine_types_id)[0].name}</h3>
                      </div>
                  </div>
                  <div className="row">
@@ -41,8 +41,8 @@ class Restaurant extends React.Component {
              </div>
              <div className="col-sm-5">
                  <div className="row">
-                     <div className="col-sm-12 rating">
-                         {stars}
+                       <div className="col-sm-12 rating">
+                           {stars}
                      </div>
                   </div>
                   <div className="row">

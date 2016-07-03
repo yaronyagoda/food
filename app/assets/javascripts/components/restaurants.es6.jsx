@@ -18,8 +18,9 @@ class Restaurants extends React.Component {
      }
 
 
-    componentDidMount() {
-       Api.getRestaurants(); 
+    componentWillMount() {
+      Api.getCuisineTypes();
+      Api.getRestaurants();
     }
 
     handleCuisineChange(evt) {
@@ -31,8 +32,13 @@ class Restaurants extends React.Component {
     }
 
     render() {
-        const foodTypes = ["all", "Asian" , "Dinner", "Salad"]
         const rankTypes = ["1", "2" , "3", "4", "5"]
+
+        console.log(this.props.filtered)
+        if (this.props.filtered)
+            restaurants =  this.props.filtered.map(r =>
+                  <Restaurant restaurant={r} key = {r.id} cuisine_types={this.props.cuisine_types}/>)
+       else restaurants = [];
 
         return (
             <div className="wrapper">
@@ -47,11 +53,10 @@ class Restaurants extends React.Component {
 
                     <div>
                         <div className="filter">
-                            <RestaurantFilter label="Cuisine"
-                                              defaultValue={this.props.cuisineFilter}
-                                              onChange={this.handleCuisineChange.bind(this)}
-                                              options={["all",...Constants.cuisineTypes()]}
-                            />
+                            <QuisineFilter label="Cuisine"
+                                           defaultValue={this.props.cuisineFilter}
+                                           onChange={this.handleCuisineChange.bind(this)}
+                                              />
                         </div>
                         <div className="filter">
                             <RestaurantFilter label="Rate"
@@ -64,9 +69,7 @@ class Restaurants extends React.Component {
                     <div className="row">
                         <div className="col-md-5 col-lg-5">
                             <div className="rest-list">
-                                {this.props.filtered.map(r =>
-                                    <Restaurant restaurant={r} key = {r.id}/>
-                                )}
+                                {restaurants}
                             </div>
                         </div>
                         <div className="col-md-4 col-lg-5">
@@ -103,11 +106,13 @@ class Restaurants extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {
+  console.log(state.filtered);
+  return {
         restaurants: state.restaurants,
         filtered: state.filtered,
         rate_filter: state.rate_filter,
-        cuisine_filter: state.cuisine_filter
+        cuisine_filter: state.cuisine_filter,
+        cuisine_types: state.cuisine_types
     };
 };
 

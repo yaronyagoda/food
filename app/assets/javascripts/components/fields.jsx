@@ -54,13 +54,13 @@ var SelectField = React.createClass({
         return optionsArray.map((option, i) => {
             if (typeof(option) != "object") {
                 option = {
-                    label: option,
-                    value: option
+                    id: option,
+                    name: option
                 }
             }
             return (
-                <option key={i} value={option.value}>
-                    {option.label}
+                <option key={i} value={option.id}>
+                    {option.name}
                 </option>
             );
         });

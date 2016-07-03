@@ -80,13 +80,13 @@ class NewRestaurant extends React.Component {
                             required/>
 
                      <SelectField
-                         name="food_type"
+                         name="cuisine_types_id"
                          label = "Cuisine type"
                          reqiured
                          placeholder="Select Cuisine Type"
                          className="form-control"
-                         value={restaurant.food_type}
-                         options = {Constants.cuisineTypes()}>
+                         value={restaurant.cuisine_types_id}
+                         options = {this.props.cuisine_types}>
                      </SelectField>
 
                      <SelectField
@@ -158,7 +158,8 @@ NewRestaurant.contextTypes = {
 
 const mapStateToProps = state => {
     return {
-        restaurants: state.restaurants
+        restaurants: state.restaurants,
+        cuisine_types: state.cuisine_types
     };
 };
 

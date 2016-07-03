@@ -5,13 +5,24 @@
 #
 #   cities => City.create([{ 'name': 'Chicago' }, { 'name': 'Copenhagen' }])
 #   Mayor.create('name': 'Emanuel', city: cities.first)
+CuisineType.find_or_create_by('name': 'Asian')
+CuisineType.find_or_create_by('name': 'Dinner')
+CuisineType.find_or_create_by('name': 'Salad')
+CuisineType.find_or_create_by('name': 'Vegan')
+CuisineType.find_or_create_by('name': 'Hamburger')
+CuisineType.find_or_create_by('name': 'Sandwich')
+CuisineType.find_or_create_by('name': 'Humus')
+CuisineType.find_or_create_by('name': 'Home cooking')
+CuisineType.find_or_create_by('name': 'Pita')
+CuisineType.find_or_create_by('name': 'Sushi')
+CuisineType.find_or_create_by('name': 'Italian')
 
 
 rest1 = Restaurant.find_or_initialize_by('name': 'Herzog')
 rest1.update_attributes(
     'speed' => 'Fast',
     'name' =>'Herzog',
-    'food_type' => 'Vegan',
+    'cuisine_types_id' => 4,
     'ten_bis' => true,
     'delivery' => false,
     'link' => 'https://www.facebook.com/Hertzog-%D7%94%D7%A8%D7%A6%D7%95%D7%92-669239419823508/ ',
@@ -25,7 +36,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Giraffe')
 rest1.update_attributes(
   'speed' => 'Slow',
   'name' => 'Giraffe',
-  'food_type' => 'Asian',
+  'cuisine_types_id' => 1,
   'ten_bis' => true,
   'delivery' => true,
   'link' => 'https://www.giraffe.co.il/',
@@ -40,7 +51,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'River')
 rest1.update_attributes(
   'speed' => 'Slow',
   'name' => 'River',
-  'food_type' => 'Asian',
+  'cuisine_types_id' => 1,
   'ten_bis' => true,
   'delivery' => true,
   'link' => 'http://river-bar.co.il/',
@@ -55,8 +66,8 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Fresh')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Fresh',
-  'food_type' => 'Salad',
   'ten_bis' => true,
+  'cuisine_types_id' => 3,
   'delivery' => false,
   'link' => 'http://www.freshkitchen.co.il/',
   'description' => "Looks great, tastes bad.",
@@ -70,7 +81,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Salsalat')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Salsalat',
-  'food_type' => 'Salad',
+  'cuisine_types_id' => 3,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'https://www.youtube.com',
@@ -85,7 +96,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Goocha Diner')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Goocha Diner',
-  'food_type' => 'Dinner',
+  'cuisine_types_id' => 2,
   'ten_bis' => true,
   'delivery' => true,
   'link' => 'http://www.thediner.co.il/',
@@ -100,7 +111,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Heder Ochel')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Heder Ochel',
-  'food_type' => 'Dinner',
+  'cuisine_types_id' => 2,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'http://dininghall.co.il/',
@@ -115,8 +126,8 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Indira')
 rest1.update_attributes(
   'speed' => 'Slow',
   'name' => 'Indira',
-  'food_type' => 'Asian',
   'ten_bis' => true,
+  'cuisine_types_id' => 1,
   'delivery' => true,
   'link' => 'http://www.indira.co.il/',
   'description' => "",
@@ -130,8 +141,8 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Rustico')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Rustico',
-  'food_type' => 'Italian',
   'ten_bis' => true,
+  'cuisine_types_id' => 11,
   'delivery' => false,
   'link' => 'http://rustico.co.il/piazza/menus.html',
   'description' => "",
@@ -145,7 +156,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Oban Koban')
 rest1.update_attributes(
   'speed' => 'Slow',
   'name' => 'Oban Koban',
-  'food_type' => 'Asian',
+  'cuisine_types_id' => 1,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'http://obankoban.co.il/',
@@ -160,7 +171,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'HaMiznon')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'HaMiznon',
-  'food_type' => 'Pita',
+  'cuisine_types_id' => 9,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'http://www.hamiznon.co.il/',
@@ -175,8 +186,8 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Shishi')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Shishi',
-  'food_type' => 'Sushi',
   'ten_bis' => false,
+  'cuisine_types_id' => 10,
   'delivery' => true,
   'link' => 'http://shi-shi.co.il/',
   'description' => "Shoshana palce, no ten bis.",
@@ -190,7 +201,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Vitrina')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Vitrina',
-  'food_type' => 'Hamburger',
+  'cuisine_types_id' => 5,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'https://www.youtube.com',
@@ -205,7 +216,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Ad HaEzem Express')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => 'Ad HaEzem Express',
-  'food_type' => 'Hamburger',
+  'cuisine_types_id' => 5,
   'ten_bis' => true,
   'delivery' => false,
   'link' => 'http://www.adhaetzemex.co.il/',
@@ -220,7 +231,7 @@ rest1 = Restaurant.find_or_initialize_by('name': 'Wolfnights')
 rest1.update_attributes(
   'speed' => 'Fast',
   'name' => "Wolfnights",
-  'food_type' => 'Hamburger',
+  'cuisine_types_id' => 5,
   'ten_bis' => true,
   'delivery' => true,
   'link' => 'http://www.wolfnights.co.il/m',
