@@ -1,0 +1,67 @@
+
+
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
+.rest-img-container {
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    margin-top: -170px;
+  }
+}
+
+.title-center {
+  text-align: center;
+}
+
+
+.main-title {
+  font-family: cursive;
+  font-size: 70px;
+  color: red;
+  &-remark {
+    font-size: 25px;
+    color: black;
+  }
+}
+
+.filter {
+  display:inline-block;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom:50px;
+  font-size: 20px;
+}
+
+.newRest {
+  margin: 30px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.rest-list {
+  margin-left: 50px;
+}
+
+.right{
+  float:right;
+  width: 50%;
+}
+
+.left{
+  float:left;
+  width: 50%;
+}
+
+
+.footer {
+   height: 100px;
+}

@@ -1,0 +1,2 @@
+module CuisineTypesHelper
+end

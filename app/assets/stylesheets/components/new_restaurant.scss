@@ -1,0 +1,46 @@
+#image-food {
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  position : absolute;
+}
+
+.form-error.form-control {
+  background-color: red;
+}
+
+
+
+
+.container {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  margin-top: 100px;
+
+  .myForm {
+    border :3px solid black;
+    width:600px;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+    position: absolute;
+    z-index: 10;
+    left:0;
+    top:0;
+    padding: 20px;
+    background-color: white;
+
+    .error-message {
+      color:red;
+      font-size:20px;
+      margin-left: 50px;
+    }
+  }
+
+
+}
+
+
+
