@@ -15,8 +15,8 @@ class RestMap extends React.Component {
          this.props.filtered.map(rest => {
            gmaps.addMarker({
              title: rest.name,
-             lat: rest.lat,
-             lng: rest.lang,
+             lat: rest.latitude,
+             lng: rest.longitude,
           })
         })
       }

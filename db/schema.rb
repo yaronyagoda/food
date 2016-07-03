@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703102831) do
+ActiveRecord::Schema.define(version: 20160703181713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,22 +23,23 @@ ActiveRecord::Schema.define(version: 20160703102831) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",             null: false
     t.string   "food_type"
-    t.string   "speed"
+    t.string   "speed",            null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.boolean  "ten_bis"
-    t.boolean  "delivery"
-    t.string   "link"
-    t.string   "description"
-    t.integer  "rank"
-    t.string   "address"
-    t.string   "lat"
-    t.string   "lang"
-    t.integer  "cuisine_types_id"
+    t.boolean  "is_ten_bis",       null: false
+    t.boolean  "is_delivery",      null: false
+    t.string   "link",             null: false
+    t.string   "description",      null: false
+    t.integer  "rank",             null: false
+    t.string   "address",          null: false
+    t.string   "latitude",         null: false
+    t.string   "longitude",        null: false
+    t.integer  "cuisine_types_id", null: false
   end
 
   add_index "restaurants", ["cuisine_types_id"], name: "index_restaurants_on_cuisine_types_id", using: :btree
+  add_index "restaurants", ["name"], name: "index_restaurants_on_name", unique: true, using: :btree
 
 end

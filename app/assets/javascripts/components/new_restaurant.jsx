@@ -29,8 +29,8 @@ class NewRestaurant extends React.Component {
 
         new google.maps.Geocoder().geocode({'address': model.address}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
-                model.lat = results[0].geometry.location.lat();
-                model.lang = results[0].geometry.location.lng();
+                model.latitude = results[0].geometry.location.lat();
+                model.longitude = results[0].geometry.location.lng();
                 if (this.state.edit) {
                     Api.updateRestaurant(this.props.params.id, model);
                 } else {
@@ -99,14 +99,14 @@ class NewRestaurant extends React.Component {
                          options = {["Fast", "Slow"]}>
                      </SelectField>
 
-                     <CheckboxField  name="ten_bis"
+                     <CheckboxField  name="is_ten_bis"
                                      label="Ten Bis"
-                                     value={restaurant.ten_bis}
+                                     value={restaurant.is_ten_bis}
                                      className="form-control"/>
 
-                     <CheckboxField  name="delivery"
+                     <CheckboxField  name="is_delivery"
                                      label="Delivery"
-                                     value={restaurant.delivery}
+                                     value={restaurant.is_delivery}
                                      className="form-control"/>
 
                      <Field name="link"

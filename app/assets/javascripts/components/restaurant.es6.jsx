@@ -7,8 +7,8 @@ class Restaurant extends React.Component {
     }
 
     render () {
-      const tenBisClass = this.props.restaurant.ten_bis ? "" : "img-hidden";
-      const deliveryClass = this.props.restaurant.delivery ? "" : "img-hidden";
+      const tenBisClass = this.props.restaurant.is_ten_bis ? "" : "img-hidden";
+      const deliveryClass = this.props.restaurant.is_delivery ? "" : "img-hidden";
       const stars = [];
       const editLink =  '/edit/' + this.props.restaurant.id;
       for (i = 0; i < this.props.restaurant.rank ; i++) {
